@@ -20,12 +20,6 @@ class _MyHomePageState extends State<MyHomePage> {
     currentIndex = 0;
   }
 
-  void changePage(int index) {
-    setState(() {
-      currentIndex = index;
-    });
-  }
-
   final List<Widget> _children = [
     Dashboard(),
     Wallet()
@@ -33,11 +27,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = PageController(
-      initialPage: 1,
+    final pageController = PageController(
+      initialPage: currentIndex,
     );
+
+    void changePage(int index) {
+      setState(() {
+        currentIndex = index;
+        pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease);
+      });
+    }
+
     final pageView= PageView(
-      controller: controller,
+      controller: pageController,
       physics: BouncingScrollPhysics(),
       onPageChanged: (int index) {
       setState(() {

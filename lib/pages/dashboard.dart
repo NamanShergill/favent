@@ -29,7 +29,7 @@ class Dashboard extends StatelessWidget {
                             decoration: BoxDecoration(
                                 gradient: LinearGradient(colors: [
                                   const Color(0xFF81269D),
-                                  Colors.blue
+                                  const Color(0xFFEE112D)
                                 ],
                                     begin: Alignment.centerLeft,
                                     end:  Alignment.centerRight)

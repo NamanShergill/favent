@@ -27,8 +27,8 @@ class Wallet extends StatelessWidget {
                           child: Container(
                             decoration: BoxDecoration(
                                 gradient: LinearGradient(colors: [
-                                  Colors.blue,
-                                  Colors.greenAccent
+                                  const Color(0xFFEE112D),
+                                  const Color(0xFF81269D),
                                 ],
                                     begin: Alignment.centerLeft,
                                     end:  Alignment.centerRight)

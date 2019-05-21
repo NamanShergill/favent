@@ -4,6 +4,8 @@ import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:favent/src/utils/screen_size.dart';
 import 'package:favent/pages/dashboard.dart';
 import 'package:favent/pages/wallet.dart';
+import 'package:favent/pages/profile.dart';
+
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
@@ -13,7 +15,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   int currentIndex;
+
   void initState() {
     // TODO: implement initState
     super.initState();
@@ -48,7 +52,8 @@ class _MyHomePageState extends State<MyHomePage> {
     },
       children: <Widget>[
         Dashboard(),
-        Wallet()
+        Wallet(),
+        ProfilePage(),
       ],
     );
     return Scaffold(
@@ -77,23 +82,23 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundColor: Colors.red,
             ),
             BubbleBottomBarItem(
-                icon: Icon(Icons.format_list_bulleted, color: Colors.purpleAccent),
-                title: Text('Requests'),
+                icon: Icon(Icons.account_balance_wallet, color: Colors.purpleAccent),
+                title: Text('Wallet'),
                 backgroundColor: Colors.purpleAccent
             ),
             BubbleBottomBarItem(
-                icon: Icon(Icons.playlist_add_check, color: Colors.pink),
-                title: Text('Inventory'),
+                icon: Icon(Icons.notifications_active, color: Colors.pink),
+                title: Text('Notifications'),
                 backgroundColor: Colors.pink
             ),
             BubbleBottomBarItem(
-                icon: Icon(Icons.settings, color: Colors.blue),
-                title: Text('Settings'),
+                icon: Icon(Icons.account_circle, color: Colors.blue),
+                title: Text('Profile'),
                 backgroundColor: Colors.blue
             ),
             BubbleBottomBarItem(
-                icon: Icon(Icons.monetization_on, color: Colors.orangeAccent),
-                title: Text('Points'),
+                icon: Icon(Icons.settings, color: Colors.orangeAccent),
+                title: Text('Settings'),
                 backgroundColor: Colors.orangeAccent
             ),
           ],

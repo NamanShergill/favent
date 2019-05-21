@@ -2,9 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:favent/Theme/colors.dart';
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:favent/src/utils/screen_size.dart';
+import 'package:favent/main.dart';
+import 'homepage.dart';
 
-class Dashboard extends StatelessWidget {
-  // This widget is the root of your application.
+final DFFont= 'Josefin';
+
+class Dashboard extends StatefulWidget {
+  @override
+  _DashboardState createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     final _media = MediaQuery.of(context).size;
@@ -14,7 +22,7 @@ class Dashboard extends StatelessWidget {
       children: <Widget>[
         Container(
           color: Colors.grey.shade50,
-          height: _media.height / 2,
+          height: _media.height / 2 - 40,
           child: Stack(
             children: <Widget>[
               Column(
@@ -55,8 +63,8 @@ class Dashboard extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: Container(
                   height: _media.longestSide <= 775
-                      ? _media.height / 4
-                      : _media.height / 4.3,
+                      ? _media.height / 4.3
+                      : _media.height / 4.6,
                   width: _media.width - 30,
                   child:
                   Card(
@@ -77,52 +85,69 @@ class Dashboard extends StatelessWidget {
                                 Row(
                                   children: <Widget>[
                                     Icon(Icons.account_circle, color: Colors.grey,),
-                                    Text(
-                                      "User",
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'Varela'
-                                      ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                          "User",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: DFFont,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(
+                                          'Naman Shergill',
+                                          style: Theme.of(context).textTheme.headline.copyWith(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: DFFont,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  'Naman Shergill',
-                                  style: Theme.of(context).textTheme.headline.copyWith(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Varela'
-                                  ),
                                 ),
                                 SizedBox(height: 20),
                                 Row(
                                   children: <Widget>[
                                     Icon(Icons.monetization_on, color: Colors.grey,),
-                                    Text(
-                                      "Balance",
-                                      style: TextStyle(
-                                          fontSize: 18,
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'Varela'
-                                      ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                          "Balance",
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.bold,
+                                              fontFamily: DFFont,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text('2000',
+                                            style: Theme.of(context).textTheme.headline.copyWith(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                              letterSpacing: 0.4,
+                                                fontFamily: DFFont,
+                                            ))
+                                      ],
                                     ),
                                   ],
                                 ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text('2000',
-                                    style: Theme.of(context).textTheme.headline.copyWith(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'Varela'
-                                    ))
                               ],
                             ),
                           ),
@@ -151,7 +176,12 @@ class Dashboard extends StatelessWidget {
                             color: Colors.white,
                             size: 28,
                           ),
-                          onPressed: () => print("account"),
+                          onPressed: () {
+//                            nvgIndex= 2;
+//                            setState(() {
+//                              nvgIndex=2;
+//                            });
+                          },
                         ),
                         IconButton(
                           icon: Icon(
@@ -177,7 +207,7 @@ class Dashboard extends StatelessWidget {
                                 fontSize: _media.longestSide <= 775 ? 35 : 40,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontFamily: "Varela"),
+                                fontFamily: "Josefin"),
                           ),
                         ),
                       ],
@@ -203,9 +233,9 @@ class Dashboard extends StatelessWidget {
                     Text(
                       'Favors',
                       style: TextStyle(
-                          fontSize: 17,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'Varela'
+                          fontFamily: DFFont,
                       ),
                     ),
                     Icon(
@@ -226,114 +256,9 @@ class Dashboard extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Card(
-                        elevation: 1,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(5),
-                          onTap: (){
-                          },
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Card(
-                                  margin: EdgeInsets.only(top: 10),
-                                  elevation: 0,
-                                  shape: CircleBorder(),
-                                  color: Colors.green,
-                                  child: Padding(
-                                      padding: EdgeInsets.all(10),
-                                      child: Icon(Icons.playlist_add, color: Colors.white,size: 25,)),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(5),
-                                  width: 120,
-                                  child: Text('Request Items',
-                                    style: TextStyle(
-                                      inherit: true,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
-                                      fontSize: 15.0,),
-                                    textAlign: TextAlign.center,),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        elevation: 1,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(5),
-                          onTap: (){
-                          },
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Card(
-                                  margin: EdgeInsets.only(top: 10),
-                                  elevation: 0,
-                                  shape: CircleBorder(),
-                                  color: Colors.orangeAccent,
-                                  child: Padding(
-                                      padding: EdgeInsets.all(10),
-                                      child: Icon(Icons.playlist_add_check, color: Colors.white,size: 25,)),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(5),
-                                  width: 120,
-                                  child: Text('Inventory',
-                                    style: TextStyle(
-                                      inherit: true,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
-                                      fontSize: 15.0,),
-                                    textAlign: TextAlign.center,),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        elevation: 1,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(5),
-                          onTap: (){
-                          },
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Card(
-                                  margin: EdgeInsets.only(top: 10),
-                                  elevation: 0,
-                                  shape: CircleBorder(),
-                                  color: Colors.redAccent,
-                                  child: Padding(
-                                      padding: EdgeInsets.all(10),
-                                      child: Icon(Icons.playlist_play, color: Colors.white,size: 25,)),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(5),
-                                  width: 120,
-                                  child: Text('Transactions',
-                                    style: TextStyle(
-                                      inherit: true,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
-                                      fontSize: 15.0,),
-                                    textAlign: TextAlign.center,),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
+                      colorCard('Request Items', Icons.playlist_add, context, '/favorsreq', Colors.green),
+                      colorCard('Inventory', Icons.playlist_add_check, context, '' , Colors.blue),
+                      colorCard('Previous Orders', Icons.playlist_play, context, '' , Colors.redAccent),
                     ],
                   ),
                 ),
@@ -348,7 +273,7 @@ class Dashboard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(Icons.arrow_drop_down, color: Colors.grey,),
-            Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: 'Varela'),),
+            Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: DFFont,),),
             Icon(Icons.arrow_drop_down, color: Colors.grey,),
           ],
         ),
@@ -370,9 +295,9 @@ class Dashboard extends StatelessWidget {
                     Text(
                       'Services',
                       style: TextStyle(
-                          fontSize: 17,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'Varela'
+                          fontFamily: DFFont,
                       ),
                     ),
                     Icon(
@@ -393,114 +318,9 @@ class Dashboard extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Card(
-                        elevation: 1,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(5),
-                          onTap: (){
-                          },
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Card(
-                                  margin: EdgeInsets.only(top: 10),
-                                  elevation: 0,
-                                  shape: CircleBorder(),
-                                  color: Colors.green,
-                                  child: Padding(
-                                      padding: EdgeInsets.all(10),
-                                      child: Icon(Icons.build, color: Colors.white,size: 25,)),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(5),
-                                  width: 120,
-                                  child: Text('Browse',
-                                    style: TextStyle(
-                                      inherit: true,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
-                                      fontSize: 15.0,),
-                                    textAlign: TextAlign.center,),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        elevation: 1,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(5),
-                          onTap: (){
-                          },
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Card(
-                                  margin: EdgeInsets.only(top: 10),
-                                  elevation: 0,
-                                  shape: CircleBorder(),
-                                  color: Colors.orangeAccent,
-                                  child: Padding(
-                                      padding: EdgeInsets.all(10),
-                                      child: Icon(Icons.add_box, color: Colors.white,size: 25,)),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(5),
-                                  width: 120,
-                                  child: Text('Add',
-                                    style: TextStyle(
-                                      inherit: true,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
-                                      fontSize: 15.0,),
-                                    textAlign: TextAlign.center,),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        elevation: 1,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(5),
-                          onTap: (){
-                          },
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Card(
-                                  margin: EdgeInsets.only(top: 10),
-                                  elevation: 0,
-                                  shape: CircleBorder(),
-                                  color: Colors.redAccent,
-                                  child: Padding(
-                                      padding: EdgeInsets.all(10),
-                                      child: Icon(Icons.playlist_play, color: Colors.white,size: 25,)),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(5),
-                                  width: 120,
-                                  child: Text('Transactions',
-                                    style: TextStyle(
-                                      inherit: true,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
-                                      fontSize: 15.0,),
-                                    textAlign: TextAlign.center,),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
+                      colorCarddisabled('Browse', Icons.build, context, '' , Colors.green),
+                      colorCarddisabled('Add', Icons.add_box, context, '' , Colors.blue),
+                      colorCarddisabled('Previous Orders', Icons.playlist_play, context, '' , Colors.redAccent)
                     ],
                   ),
                 ),
@@ -526,9 +346,9 @@ class Dashboard extends StatelessWidget {
                     Text(
                       'Buy/Sell Items',
                       style: TextStyle(
-                          fontSize: 17,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'Varela'
+                          fontFamily: DFFont,
                       ),
                     ),
                     Icon(
@@ -549,114 +369,9 @@ class Dashboard extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Card(
-                        elevation: 1,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(5),
-                          onTap: (){
-                          },
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Card(
-                                  margin: EdgeInsets.only(top: 10),
-                                  elevation: 0,
-                                  shape: CircleBorder(),
-                                  color: Colors.green,
-                                  child: Padding(
-                                      padding: EdgeInsets.all(10),
-                                      child: Icon(Icons.add_circle, color: Colors.white,size: 25,)),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(5),
-                                  width: 120,
-                                  child: Text('Buy',
-                                    style: TextStyle(
-                                      inherit: true,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
-                                      fontSize: 15.0,),
-                                    textAlign: TextAlign.center,),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        elevation: 1,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(5),
-                          onTap: (){
-                          },
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Card(
-                                  margin: EdgeInsets.only(top: 10),
-                                  elevation: 0,
-                                  shape: CircleBorder(),
-                                  color: Colors.orangeAccent,
-                                  child: Padding(
-                                      padding: EdgeInsets.all(10),
-                                      child: Icon(Icons.attach_money, color: Colors.white,size: 25,)),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(5),
-                                  width: 120,
-                                  child: Text('Sell',
-                                    style: TextStyle(
-                                      inherit: true,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
-                                      fontSize: 15.0,),
-                                    textAlign: TextAlign.center,),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        elevation: 1,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(5),
-                          onTap: (){
-                          },
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Card(
-                                  margin: EdgeInsets.only(top: 10),
-                                  elevation: 0,
-                                  shape: CircleBorder(),
-                                  color: Colors.redAccent,
-                                  child: Padding(
-                                      padding: EdgeInsets.all(10),
-                                      child: Icon(Icons.playlist_play, color: Colors.white,size: 25,)),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(5),
-                                  width: 120,
-                                  child: Text('Transactions',
-                                    style: TextStyle(
-                                      inherit: true,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
-                                      fontSize: 15.0,),
-                                    textAlign: TextAlign.center,),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
+                      colorCarddisabled('Buy', Icons.attach_money, context, '', Colors.green),
+                      colorCarddisabled('Sell', Icons.money_off, context, '', Colors.blue),
+                      colorCarddisabled('Previous Orders', Icons.playlist_play, context, '', Colors.redAccent),
                     ],
                   ),
                 ),
@@ -674,7 +389,7 @@ class Dashboard extends StatelessWidget {
 //            mainAxisAlignment: MainAxisAlignment.center,
 //            children: <Widget>[
 //              Icon(Icons.arrow_drop_up, color: Colors.grey,),
-//              Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: 'Varela'),),
+//              Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: 'Josefin),),
 //              Icon(Icons.arrow_drop_up, color: Colors.grey,),
 //            ],
 //          ),
@@ -684,4 +399,134 @@ class Dashboard extends StatelessWidget {
       ],
     );
   }
+}
+
+Widget colorCard(
+    String text, IconData icon, BuildContext context, String route, Color color) {
+  final _media = MediaQuery.of(context).size;
+  return Container(
+    margin: EdgeInsets.all(10),
+    height: 100,
+    width: _media.width / 3 - 30,
+    decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(15),
+    ),
+    child: Material(
+      elevation: 2,
+      borderRadius: BorderRadius.circular(15),
+      color: color,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(15),
+        onTap: (){
+          Navigator.pushNamed(
+            context,
+            route
+          );
+        },
+        child: Padding(
+          padding: EdgeInsets.all(15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                text,
+                style: TextStyle(
+                    fontSize: 17,
+                    color: Colors.white,
+                    fontFamily: DFFont,
+                ),
+              ),
+              Icon(
+                icon,
+                color: Colors.white,
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget dbCards (String name, IconData icon, BuildContext context, Color color) {
+  return Card(
+    elevation: 1,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
+    child: InkWell(
+      borderRadius: BorderRadius.circular(5),
+      onTap: (){
+      },
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Card(
+              margin: EdgeInsets.only(top: 10),
+              elevation: 0,
+              shape: CircleBorder(),
+              color: color,
+              child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Icon(icon, color: Colors.white, size: 25,)),
+            ),
+            Container(
+              padding: EdgeInsets.all(5),
+              width: 120,
+              child: Text(name,
+                style: TextStyle(
+                  inherit: true,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey,
+                  fontSize: 15.0,),
+                textAlign: TextAlign.center,),
+            )
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+Widget colorCarddisabled(
+    String text, IconData icon, BuildContext context, String route, Color color) {
+  final _media = MediaQuery.of(context).size;
+  return Container(
+    margin: EdgeInsets.all(10),
+    height: 100,
+    width: _media.width / 3 - 30,
+    decoration: BoxDecoration(
+      color: color,
+      borderRadius: BorderRadius.circular(15),
+    ),
+    child: Material(
+      borderRadius: BorderRadius.circular(15),
+      color: Colors.grey,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(15),
+        child: Padding(
+          padding: EdgeInsets.all(15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                text,
+                style: TextStyle(
+                    fontSize: 17,
+                    color: Colors.white,
+                    fontFamily: DFFont,
+                ),
+              ),
+              Icon(
+                icon,
+                color: Colors.white,
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
 }

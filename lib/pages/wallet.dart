@@ -3,6 +3,9 @@ import 'package:favent/Theme/colors.dart';
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:favent/src/utils/screen_size.dart';
 
+
+final DFFont= 'Josefin';
+
 class Wallet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,7 +16,7 @@ class Wallet extends StatelessWidget {
       children: <Widget>[
         Container(
           color: Colors.grey.shade50,
-          height: _media.height / 2,
+          height: _media.height / 2 - 40,
           child: Stack(
             children: <Widget>[
               Column(
@@ -82,7 +85,7 @@ class Wallet extends StatelessWidget {
                                           color: Colors.grey,
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
-                                          fontFamily: 'Varela'
+                                          fontFamily: DFFont,
                                       ),
                                     ),
                                   ],
@@ -95,7 +98,7 @@ class Wallet extends StatelessWidget {
                                   style: Theme.of(context).textTheme.headline.copyWith(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
-                                      fontFamily: 'Varela'
+                                      fontFamily: DFFont,
                                   ),
                                 ),
                                 SizedBox(height: 20),
@@ -108,7 +111,7 @@ class Wallet extends StatelessWidget {
                                           fontSize: 18,
                                           color: Colors.grey,
                                           fontWeight: FontWeight.bold,
-                                          fontFamily: 'Varela'
+                                          fontFamily: DFFont,
                                       ),
                                     ),
                                   ],
@@ -120,7 +123,7 @@ class Wallet extends StatelessWidget {
                                     style: Theme.of(context).textTheme.headline.copyWith(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
-                                        fontFamily: 'Varela'
+                                        fontFamily: DFFont,
                                     ))
                               ],
                             ),
@@ -176,7 +179,7 @@ class Wallet extends StatelessWidget {
                                 fontSize: _media.longestSide <= 775 ? 35 : 40,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontFamily: "Varela"),
+                                fontFamily: DFFont),
                           ),
                         ),
                       ],

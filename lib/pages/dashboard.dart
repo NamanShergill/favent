@@ -60,6 +60,7 @@ class Dashboard extends StatelessWidget {
                   width: _media.width - 30,
                   child:
                   Card(
+                    color: primaryBlack,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                     elevation: 2,
                     child: SingleChildScrollView(
@@ -94,7 +95,7 @@ class Dashboard extends StatelessWidget {
                                 Text(
                                   'Naman Shergill',
                                   style: Theme.of(context).textTheme.headline.copyWith(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontFamily: 'Varela'
                                   ),
@@ -119,7 +120,7 @@ class Dashboard extends StatelessWidget {
                                 ),
                                 Text('2000',
                                     style: Theme.of(context).textTheme.headline.copyWith(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold,
                                         fontFamily: 'Varela'
                                     ))
@@ -227,6 +228,7 @@ class Dashboard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Card(
+                        color: primaryBlack,
                         elevation: 1,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
                         child: InkWell(
@@ -253,7 +255,7 @@ class Dashboard extends StatelessWidget {
                                     style: TextStyle(
                                       inherit: true,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
+                                      color: Colors.white,
                                       fontSize: 15.0,),
                                     textAlign: TextAlign.center,),
                                 )
@@ -263,6 +265,7 @@ class Dashboard extends StatelessWidget {
                         ),
                       ),
                       Card(
+                        color: primaryBlack,
                         elevation: 1,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
                         child: InkWell(
@@ -289,7 +292,7 @@ class Dashboard extends StatelessWidget {
                                     style: TextStyle(
                                       inherit: true,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
+                                      color: Colors.white,
                                       fontSize: 15.0,),
                                     textAlign: TextAlign.center,),
                                 )
@@ -299,6 +302,7 @@ class Dashboard extends StatelessWidget {
                         ),
                       ),
                       Card(
+                        color: primaryBlack,
                         elevation: 1,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
                         child: InkWell(
@@ -325,7 +329,7 @@ class Dashboard extends StatelessWidget {
                                     style: TextStyle(
                                       inherit: true,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
+                                      color: Colors.white,
                                       fontSize: 15.0,),
                                     textAlign: TextAlign.center,),
                                 )
@@ -394,6 +398,7 @@ class Dashboard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Card(
+                        color: primaryBlack,
                         elevation: 1,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
                         child: InkWell(
@@ -420,7 +425,7 @@ class Dashboard extends StatelessWidget {
                                     style: TextStyle(
                                       inherit: true,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
+                                      color: Colors.white,
                                       fontSize: 15.0,),
                                     textAlign: TextAlign.center,),
                                 )
@@ -430,6 +435,7 @@ class Dashboard extends StatelessWidget {
                         ),
                       ),
                       Card(
+                        color: primaryBlack,
                         elevation: 1,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
                         child: InkWell(
@@ -456,7 +462,7 @@ class Dashboard extends StatelessWidget {
                                     style: TextStyle(
                                       inherit: true,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
+                                      color: Colors.white,
                                       fontSize: 15.0,),
                                     textAlign: TextAlign.center,),
                                 )
@@ -466,6 +472,7 @@ class Dashboard extends StatelessWidget {
                         ),
                       ),
                       Card(
+                        color: primaryBlack,
                         elevation: 1,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
                         child: InkWell(
@@ -492,7 +499,7 @@ class Dashboard extends StatelessWidget {
                                     style: TextStyle(
                                       inherit: true,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
+                                      color: Colors.white,
                                       fontSize: 15.0,),
                                     textAlign: TextAlign.center,),
                                 )

@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //        ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
         bottomNavigationBar: BubbleBottomBar(
-          backgroundColor: Colors.white,
+          backgroundColor: primaryBlack,
           hasNotch: true,
 //          fabLocation: BubbleBottomBarFabLocation.end,
           opacity: .2,

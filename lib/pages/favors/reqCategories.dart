@@ -24,78 +24,91 @@ class _reqCategoriesState extends State<reqCategories> {
           top: 70,
         ),
         children: <Widget>[
-          Container(
-            height: _media.height,
-            width: _media.width,
-            child: ListView(
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'Request Items',
-                      style: TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: DFFont,
-                      ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  InkWell(
+                    borderRadius: BorderRadius.circular(15),
+                    onTap: (){
+                      Navigator.of(context).pop();
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      size: 40,
                     ),
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  'Categories',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      inherit: true,
-                      fontFamily: DFFont,
-                      letterSpacing: 0.4
                   ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text(
+                    'Request Items',
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: DFFont,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                'Categories',
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    inherit: true,
+                    fontFamily: DFFont,
+                    letterSpacing: 0.4
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    colorCard('Electronics', '', context, Colors.green)
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    colorCard('Stationery', '', context, Colors.blue)
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    colorCard('Miscellaneous', '', context, Colors.redAccent)
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Icon(Icons.arrow_drop_down, color: Colors.grey,),
-                    Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: DFFont,),),
-                    Icon(Icons.arrow_drop_down, color: Colors.grey,),
-                  ],
-                ),
-                Divider(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    colorCarddisabled('Consumables', '', context, Colors.purpleAccent)
-                  ],
-                ),
-              ],
-            ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  colorCard('Electronics', '', context, Colors.green)
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  colorCard('Stationery', '', context, Colors.blue)
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  colorCard('Miscellaneous', '', context, Colors.redAccent)
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(Icons.arrow_drop_down, color: Colors.grey,),
+                  Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: DFFont,),),
+                  Icon(Icons.arrow_drop_down, color: Colors.grey,),
+                ],
+              ),
+              Divider(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  colorCarddisabled('Consumables', '', context, Colors.purpleAccent)
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              )
+            ],
           ),
         ],
       ),
@@ -123,78 +136,90 @@ class _inventoryState extends State<inventory> {
           top: 70,
         ),
         children: <Widget>[
-          Container(
-            height: _media.height,
-            width: _media.width,
-            child: ListView(
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'Inventory',
-                      style: TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: DFFont,
-                      ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  InkWell(
+                    borderRadius: BorderRadius.circular(15),
+                    onTap: (){
+                      Navigator.of(context).pop();
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      size: 40,
                     ),
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  'Categories',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      inherit: true,
-                      fontFamily: DFFont,
-                      letterSpacing: 0.4
                   ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text(
+                    'Inventory',
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: DFFont,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                'Categories',
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: DFFont,
+                    letterSpacing: 0.4
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    colorCard('Electronics', '', context, Colors.green)
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    colorCard('Stationery', '', context, Colors.blue)
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    colorCard('Miscellaneous', '', context, Colors.redAccent)
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Icon(Icons.arrow_drop_down, color: Colors.grey,),
-                    Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: DFFont,),),
-                    Icon(Icons.arrow_drop_down, color: Colors.grey,),
-                  ],
-                ),
-                Divider(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    colorCarddisabled('Consumables', '', context, Colors.purpleAccent)
-                  ],
-                ),
-              ],
-            ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  colorCard('Electronics', '', context, Colors.green)
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  colorCard('Stationery', '', context, Colors.blue)
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  colorCard('Miscellaneous', '', context, Colors.redAccent)
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(Icons.arrow_drop_down, color: Colors.grey,),
+                  Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: DFFont,),),
+                  Icon(Icons.arrow_drop_down, color: Colors.grey,),
+                ],
+              ),
+              Divider(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  colorCarddisabled('Consumables', '', context, Colors.purpleAccent)
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              )
+            ],
           ),
         ],
       ),
@@ -208,7 +233,7 @@ Widget colorCard(
   final _media = MediaQuery.of(context).size;
   return Container(
     constraints: BoxConstraints(minHeight: 90),
-    margin: EdgeInsets.only(top: 15, right: 15),
+    margin: EdgeInsets.only(top: 15),
     height: screenAwareSize(70, context),
     width: _media.width - 60,
     decoration: BoxDecoration(
@@ -262,7 +287,7 @@ Widget colorCarddisabled(
   final _media = MediaQuery.of(context).size;
   return Container(
     constraints: BoxConstraints(minHeight: 90),
-    margin: EdgeInsets.only(top: 15, right: 15),
+    margin: EdgeInsets.only(top: 15),
     height: screenAwareSize(70, context),
     width: _media.width - 60,
     decoration: BoxDecoration(

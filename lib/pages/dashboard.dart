@@ -21,7 +21,7 @@ class _DashboardState extends State<Dashboard> {
       physics: BouncingScrollPhysics(),
       children: <Widget>[
         Container(
-          constraints: BoxConstraints(minHeight: 300),
+          constraints: BoxConstraints(minHeight: 350),
           color: Colors.grey.shade50,
           height: _media.height / 2 - 40,
           child: Stack(

@@ -70,15 +70,16 @@ class _DashboardState extends State<Dashboard> {
                   Card(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                     elevation: 2,
-                    child: SingleChildScrollView(
+                    child: ListView(
                       physics: BouncingScrollPhysics(),
-                      child: Column(
+                      children: <Widget> [
+                        Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Container(
                             width: _media.width - 40,
-                            padding: EdgeInsets.all(30),
+                            padding: EdgeInsets.only(left: 30),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
@@ -152,7 +153,7 @@ class _DashboardState extends State<Dashboard> {
                             ),
                           ),
                         ],
-                      ),
+                      ),]
                     ),
                   ),
                 ),

@@ -57,16 +57,16 @@ class Wallet extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: Container(
                   height: _media.longestSide <= 775
-                      ? _media.height / 4
-                      : _media.height / 4.3,
+                      ? _media.height / 5
+                      : _media.height / 5.3,
                   width: _media.width - 30,
                   child:
                   Card(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                     elevation: 2,
-                    child: SingleChildScrollView(
+                    child: ListView(
                       physics: BouncingScrollPhysics(),
-                      child: Column(
+                      children: <Widget> [Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -78,9 +78,9 @@ class Wallet extends StatelessWidget {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    Icon(Icons.account_circle, color: Colors.grey,),
+                                    Icon(Icons.monetization_on, color: Colors.grey,),
                                     Text(
-                                      "",
+                                      "Favor Points",
                                       style: TextStyle(
                                           color: Colors.grey,
                                           fontSize: 18,
@@ -94,42 +94,18 @@ class Wallet extends StatelessWidget {
                                   height: 5,
                                 ),
                                 Text(
-                                  '',
+                                  '2000',
                                   style: Theme.of(context).textTheme.headline.copyWith(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                       fontFamily: DFFont,
                                   ),
                                 ),
-                                SizedBox(height: 20),
-                                Row(
-                                  children: <Widget>[
-                                    Icon(Icons.monetization_on, color: Colors.grey,),
-                                    Text(
-                                      "",
-                                      style: TextStyle(
-                                          fontSize: 18,
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: DFFont,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text('',
-                                    style: Theme.of(context).textTheme.headline.copyWith(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: DFFont,
-                                    ))
                               ],
                             ),
                           ),
                         ],
-                      ),
+                      ),]
                     ),
                   ),
                 ),
@@ -193,4 +169,62 @@ class Wallet extends StatelessWidget {
       ],
     );
   }
+}
+
+
+Widget colorCard(
+    String text, String text2, BuildContext context, Color color) {
+  final _media = MediaQuery.of(context).size;
+  return Container(
+    margin: EdgeInsets.only(top: 15, right: 15),
+    height: screenAwareSize(70, context),
+    width: _media.width - 60,
+    decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+              color: color.withOpacity(0.4),
+              blurRadius: 16,
+              spreadRadius: 0.2,
+              offset: Offset(0, 8)),
+        ]),
+    child: Material(
+      borderRadius: BorderRadius.circular(15),
+      color: color,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(15),
+        onTap: (){
+
+        },
+        child: Padding(
+          padding: EdgeInsets.all(15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                text,
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: DFFont
+                ),
+              ),
+              Text(
+                text2,
+                style: TextStyle(
+                    fontSize: 22,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: DFFont
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
 }

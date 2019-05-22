@@ -5,6 +5,7 @@ import 'package:favent/src/utils/screen_size.dart';
 import 'package:favent/pages/dashboard.dart';
 import 'package:favent/pages/wallet.dart';
 import 'package:favent/pages/profile.dart';
+import 'package:favent/pages/authentication/login.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);

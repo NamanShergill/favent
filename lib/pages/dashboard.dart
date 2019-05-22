@@ -21,6 +21,7 @@ class _DashboardState extends State<Dashboard> {
       physics: BouncingScrollPhysics(),
       children: <Widget>[
         Container(
+          constraints: BoxConstraints(minHeight: 300),
           color: Colors.grey.shade50,
           height: _media.height / 2 - 40,
           child: Stack(
@@ -62,98 +63,92 @@ class _DashboardState extends State<Dashboard> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
-                  height: _media.longestSide <= 775
-                      ? _media.height / 4.3
-                      : _media.height / 4.6,
+                  height: 160,
                   width: _media.width - 30,
                   child:
                   Card(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                     elevation: 2,
-                    child: ListView(
-                      physics: BouncingScrollPhysics(),
-                      children: <Widget> [
-                        Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Container(
-                            width: _media.width - 40,
-                            padding: EdgeInsets.only(left: 30),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Row(
-                                  children: <Widget>[
-                                    Icon(Icons.account_circle, color: Colors.grey,),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        Text(
-                                          "User",
-                                          style: TextStyle(
-                                            color: Colors.grey,
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.bold,
-                                            fontFamily: DFFont,
-                                          ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          width: _media.width - 40,
+                          padding: EdgeInsets.only(left: 30),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Icon(Icons.account_circle, color: Colors.grey,),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        "User",
+                                        style: TextStyle(
+                                          color: Colors.grey,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: DFFont,
                                         ),
-                                        SizedBox(
-                                          height: 5,
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Text(
+                                        'Naman Shergill',
+                                        style: Theme.of(context).textTheme.headline.copyWith(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: DFFont,
                                         ),
-                                        Text(
-                                          'Naman Shergill',
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 20),
+                              Row(
+                                children: <Widget>[
+                                  Icon(Icons.monetization_on, color: Colors.grey,),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        "Balance",
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: DFFont,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Text('2000',
                                           style: Theme.of(context).textTheme.headline.copyWith(
                                             color: Colors.black,
                                             fontWeight: FontWeight.bold,
+                                            letterSpacing: 0.4,
                                             fontFamily: DFFont,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 20),
-                                Row(
-                                  children: <Widget>[
-                                    Icon(Icons.monetization_on, color: Colors.grey,),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        Text(
-                                          "Balance",
-                                          style: TextStyle(
-                                            fontSize: 18,
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.bold,
-                                              fontFamily: DFFont,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text('2000',
-                                            style: Theme.of(context).textTheme.headline.copyWith(
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold,
-                                              letterSpacing: 0.4,
-                                                fontFamily: DFFont,
-                                            ))
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
+                                          ))
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
-                        ],
-                      ),]
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -227,7 +222,7 @@ class _DashboardState extends State<Dashboard> {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(
-                    left: 25.0, right: 10, bottom: 20, top: 20),
+                    left: 25.0, right: 25, bottom: 20, top: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -249,8 +244,6 @@ class _DashboardState extends State<Dashboard> {
               ),
               Container(
                 alignment: Alignment.center,
-                height: screenAwareSize(
-                    _media.longestSide <= 775 ? 110 : 80, context),
                 child: SingleChildScrollView(
                   physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
@@ -258,7 +251,7 @@ class _DashboardState extends State<Dashboard> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       colorCard('Request Items', Icons.playlist_add, context, '/favorsreq', Colors.green),
-                      colorCard('Inventory', Icons.playlist_add_check, context, '' , Colors.blue),
+                      colorCard('Inventory', Icons.playlist_add_check, context, '/favorsinv' , Colors.blue),
                       colorCard('Previous Orders', Icons.playlist_play, context, '' , Colors.redAccent),
                     ],
                   ),
@@ -289,7 +282,7 @@ class _DashboardState extends State<Dashboard> {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(
-                    left: 25.0, right: 10, bottom: 20, top: 10),
+                    left: 25.0, right: 25, bottom: 20, top: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -311,8 +304,6 @@ class _DashboardState extends State<Dashboard> {
               ),
               Container(
                 alignment: Alignment.center,
-                height: screenAwareSize(
-                    _media.longestSide <= 775 ? 110 : 80, context),
                 child: SingleChildScrollView(
                   physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
@@ -340,7 +331,7 @@ class _DashboardState extends State<Dashboard> {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(
-                    left: 25.0, right: 10, bottom: 20, top: 10),
+                    left: 25.0, right: 25, bottom: 20, top: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -362,8 +353,6 @@ class _DashboardState extends State<Dashboard> {
               ),
               Container(
                 alignment: Alignment.center,
-                height: screenAwareSize(
-                    _media.longestSide <= 775 ? 110 : 80, context),
                 child: SingleChildScrollView(
                   physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
@@ -406,6 +395,7 @@ Widget colorCard(
     String text, IconData icon, BuildContext context, String route, Color color) {
   final _media = MediaQuery.of(context).size;
   return Container(
+    constraints: BoxConstraints(minWidth: 100),
     margin: EdgeInsets.all(10),
     height: 100,
     width: _media.width / 3 - 30,
@@ -422,7 +412,7 @@ Widget colorCard(
         onTap: (){
           Navigator.pushNamed(
             context,
-            route
+            route,
           );
         },
         child: Padding(
@@ -494,6 +484,7 @@ Widget colorCarddisabled(
     String text, IconData icon, BuildContext context, String route, Color color) {
   final _media = MediaQuery.of(context).size;
   return Container(
+    constraints: BoxConstraints(minWidth: 100),
     margin: EdgeInsets.all(10),
     height: 100,
     width: _media.width / 3 - 30,

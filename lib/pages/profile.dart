@@ -126,7 +126,8 @@ Widget colorCard(
     String text, String text2, BuildContext context, Color color) {
   final _media = MediaQuery.of(context).size;
   return Container(
-    margin: EdgeInsets.only(top: 15, right: 15),
+    constraints: BoxConstraints(minHeight: 90),
+    margin: EdgeInsets.only(top: 15),
     height: screenAwareSize(70, context),
     width: _media.width - 60,
     decoration: BoxDecoration(

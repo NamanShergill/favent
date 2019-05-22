@@ -15,6 +15,7 @@ class Wallet extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       children: <Widget>[
         Container(
+          constraints: BoxConstraints(minHeight: 300),
           color: Colors.grey.shade50,
           height: _media.height / 2 - 40,
           child: Stack(
@@ -56,56 +57,51 @@ class Wallet extends StatelessWidget {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
-                  height: _media.longestSide <= 775
-                      ? _media.height / 5
-                      : _media.height / 5.3,
+                  height: 130,
                   width: _media.width - 30,
                   child:
                   Card(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                     elevation: 2,
-                    child: ListView(
-                      physics: BouncingScrollPhysics(),
-                      children: <Widget> [Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Container(
-                            width: _media.width - 40,
-                            padding: EdgeInsets.all(30),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Row(
-                                  children: <Widget>[
-                                    Icon(Icons.monetization_on, color: Colors.grey,),
-                                    Text(
-                                      "Favor Points",
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: DFFont,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  '2000',
-                                  style: Theme.of(context).textTheme.headline.copyWith(
-                                      color: Colors.black,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          width: 300,
+                          padding: EdgeInsets.all(30),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Icon(Icons.monetization_on, color: Colors.grey,),
+                                  Text(
+                                    "Favor Points",
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 18,
                                       fontWeight: FontWeight.bold,
                                       fontFamily: DFFont,
+                                    ),
                                   ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                '2000',
+                                style: Theme.of(context).textTheme.headline.copyWith(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: DFFont,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),]
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -166,6 +162,61 @@ class Wallet extends StatelessWidget {
             ],
           ),
         ),
+        Container(
+          color: Colors.grey.shade50,
+          width: _media.width,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(
+                    left: 25.0, right: 25, bottom: 20, top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'Manage Balance',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: DFFont,
+                      ),
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.grey,
+                      size: 20,
+                    )
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: <Widget>[
+                        colorCardsmall('Buy Favor Points', Icons.attach_money, context, '', Colors.green),
+                        colorCardsmalldisabled('Sell Favor Points', Icons.money_off, context, '', Colors.red)
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  colorCard('Phone Number', '7733088115', context, Colors.purpleAccent)
+                ],
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 30,
+        ),
       ],
     );
   }
@@ -176,7 +227,8 @@ Widget colorCard(
     String text, String text2, BuildContext context, Color color) {
   final _media = MediaQuery.of(context).size;
   return Container(
-    margin: EdgeInsets.only(top: 15, right: 15),
+    constraints: BoxConstraints(minHeight: 90),
+    margin: EdgeInsets.only(top: 15),
     height: screenAwareSize(70, context),
     width: _media.width - 60,
     decoration: BoxDecoration(
@@ -200,6 +252,7 @@ Widget colorCard(
         child: Padding(
           padding: EdgeInsets.all(15),
           child: Column(
+            mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -220,6 +273,116 @@ Widget colorCard(
                     fontWeight: FontWeight.bold,
                     fontFamily: DFFont
                 ),
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+
+Widget colorCardsmall(
+    String text, IconData icon, BuildContext context, String route, Color color) {
+  final _media = MediaQuery.of(context).size;
+  return Container(
+    constraints: BoxConstraints(minWidth: 170),
+    margin: EdgeInsets.all(10),
+    height: 130,
+    width: _media.width / 2 - 50,
+    decoration: BoxDecoration(
+      color: color,
+      borderRadius: BorderRadius.circular(15),
+    ),
+    child: Material(
+      elevation: 2,
+      borderRadius: BorderRadius.circular(15),
+      color: color,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(15),
+        onTap: (){
+          Navigator.pushNamed(
+            context,
+            route,
+          );
+        },
+        child: Padding(
+          padding: EdgeInsets.all(15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                text,
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.white,
+                  fontFamily: DFFont,
+                ),
+                overflow: TextOverflow.visible,
+              ),
+              Icon(
+                icon,
+                color: Colors.white,
+                size: 30,
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget colorCardsmalldisabled(
+    String text, IconData icon, BuildContext context, String route, Color color) {
+  final _media = MediaQuery.of(context).size;
+  return Container(
+    constraints: BoxConstraints(minWidth: 170),
+    margin: EdgeInsets.all(10),
+    height: 130,
+    width: _media.width / 2 - 50,
+    decoration: BoxDecoration(
+      color: color,
+      borderRadius: BorderRadius.circular(15),
+    ),
+    child: Material(
+      elevation: 2,
+      borderRadius: BorderRadius.circular(15),
+      color: Colors.grey,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(15),
+        child: Padding(
+          padding: EdgeInsets.all(15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                text,
+                style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.white,
+                  fontFamily: DFFont,
+                ),
+              ),
+              Row(
+                children: <Widget>[
+                  Icon(
+                    icon,
+                    color: Colors.white,
+                    size: 25,
+                  ),
+                  Text(
+                    '(Coming Soon)',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontFamily: DFFont,
+                    ),
+                  ),
+                ],
               )
             ],
           ),

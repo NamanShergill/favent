@@ -252,7 +252,7 @@ class _DashboardState extends State<Dashboard> {
                     children: <Widget>[
                       colorCard('Request Items', Icons.playlist_add, context, '/favorsreq', Colors.green),
                       colorCard('Inventory', Icons.playlist_add_check, context, '/favorsinv' , Colors.blue),
-                      colorCard('Previous Orders', Icons.playlist_play, context, '' , Colors.redAccent),
+                      colorCard('Previous Orders', Icons.playlist_play, context, '/login' , Colors.redAccent),
                     ],
                   ),
                 ),

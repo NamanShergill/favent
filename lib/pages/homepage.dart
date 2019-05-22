@@ -78,27 +78,32 @@ class _MyHomePageState extends State<MyHomePage> {
           items: [
             BubbleBottomBarItem(
               icon: Icon(Icons.dashboard, color: Colors.red,),
-              title: Text('Dashboard'),
+              title: Text('Dashboard',
+                style: TextStyle(fontFamily: 'Josefin'),),
               backgroundColor: Colors.red,
             ),
             BubbleBottomBarItem(
                 icon: Icon(Icons.account_balance_wallet, color: Colors.purpleAccent),
-                title: Text('Wallet'),
+                title: Text('Wallet',
+                  style: TextStyle(fontFamily: 'Josefin'),),
                 backgroundColor: Colors.purpleAccent
             ),
             BubbleBottomBarItem(
                 icon: Icon(Icons.notifications_active, color: Colors.pink),
-                title: Text('Notifications'),
+                title: Text('Notifications',
+                  style: TextStyle(fontFamily: 'Josefin'),),
                 backgroundColor: Colors.pink
             ),
             BubbleBottomBarItem(
                 icon: Icon(Icons.account_circle, color: Colors.blue),
-                title: Text('Profile'),
+                title: Text('Profile',
+                  style: TextStyle(fontFamily: 'Josefin'),),
                 backgroundColor: Colors.blue
             ),
             BubbleBottomBarItem(
                 icon: Icon(Icons.settings, color: Colors.orangeAccent),
-                title: Text('Settings'),
+                title: Text('Settings',
+                  style: TextStyle(fontFamily: 'Josefin'),),
                 backgroundColor: Colors.orangeAccent
             ),
           ],

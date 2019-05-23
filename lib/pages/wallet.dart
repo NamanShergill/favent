@@ -15,7 +15,7 @@ class Wallet extends StatelessWidget {
         Container(
           constraints: BoxConstraints(minHeight: 350),
           color: Colors.grey.shade50,
-          height: _media.height / 2 - 40,
+          height: _media.height / 2 - 80,
           child: Stack(
             children: <Widget>[
               Column(
@@ -122,29 +122,8 @@ class Wallet extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        IconButton(
-                          icon: Icon(
-                            Icons.account_circle,
-                            color: Colors.white,
-                            size: 28,
-                          ),
-                          onPressed: () => print("account"),
-                        ),
-                        IconButton(
-                          icon: Icon(
-                            Icons.notifications_none,
-                            color: Colors.white,
-                            size: 28,
-                          ),
-                          onPressed: () => print("notification"),
-                        ),
-                      ],
-                    ),
                     SizedBox(
-                      height: 30,
+                      height: 70,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -154,7 +133,7 @@ class Wallet extends StatelessWidget {
                           child: Text(
                             "Wallet",
                             style: TextStyle(
-                                fontSize: _media.longestSide <= 775 ? 35 : 40,
+                                fontSize: 50,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: DFFont),

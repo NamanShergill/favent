@@ -21,7 +21,7 @@ class _DashboardState extends State<Dashboard> {
         Container(
           constraints: BoxConstraints(minHeight: 350),
           color: Colors.grey.shade50,
-          height: _media.height / 2 - 40,
+          height: _media.height / 2 - 80,
           child: Stack(
             children: <Widget>[
               Column(
@@ -161,34 +161,8 @@ class _DashboardState extends State<Dashboard> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        IconButton(
-                          icon: Icon(
-                            Icons.account_circle,
-                            color: Colors.white,
-                            size: 28,
-                          ),
-                          onPressed: () {
-//                            nvgIndex= 2;
-//                            setState(() {
-//                              nvgIndex=2;
-//                            });
-                          },
-                        ),
-                        IconButton(
-                          icon: Icon(
-                            Icons.notifications_none,
-                            color: Colors.white,
-                            size: 28,
-                          ),
-                          onPressed: () => print("notification"),
-                        ),
-                      ],
-                    ),
                     SizedBox(
-                      height: 30,
+                      height: 70,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -198,7 +172,7 @@ class _DashboardState extends State<Dashboard> {
                           child: Text(
                             "Dashboard",
                             style: TextStyle(
-                                fontSize: _media.longestSide <= 775 ? 35 : 40,
+                                fontSize: 50,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: "Josefin"),

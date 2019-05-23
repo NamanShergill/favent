@@ -11,7 +11,7 @@ class category extends StatefulWidget {
 class _categoryState extends State<category> {
 
   double height= 0;
-  var icon = Icons.arrow_downward;
+  var icon = Icons.arrow_drop_down;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class _categoryState extends State<category> {
       child: Material(
         child: Padding(
           padding: EdgeInsets.only(
-              left: 25.0, right: 25,top: 5),
+              left: 20.0, right: 20,top: 5),
           child: Column(
             children: <Widget>[
               Material(
@@ -31,52 +31,58 @@ class _categoryState extends State<category> {
                           ? height = 60
                           : height = 0
                       ;
-                      icon = icon == Icons.arrow_downward
-                          ? icon =  Icons.arrow_upward
-                          : icon = Icons.arrow_downward
+                      icon = icon == Icons.arrow_drop_down
+                          ? icon =  Icons.arrow_drop_up
+                          : icon = Icons.arrow_drop_down
                       ;
                     });
                   },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        widget.title,
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Josefin',
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 5, right: 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          widget.title,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Josefin',
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      AnimatedContainer(
-                        height: 40,
-                        duration: Duration(milliseconds: 200),
-                        child: Icon(
-                          icon,
-                          color: Colors.grey,
-                          size: 20,
+                        SizedBox(
+                          width: 5,
                         ),
-                      ),
-                    ],
+                        AnimatedContainer(
+                          height: 40,
+                          duration: Duration(milliseconds: 200),
+                          child: Icon(
+                            icon,
+                            color: Colors.grey,
+                            size: 20,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
               SizedBox(
                 height: 5,
               ),
-              AnimatedContainer(
-                height: height,
-                duration: Duration(milliseconds: 200),
-                child: Text(
-                  widget.desc,
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 18,
-                    fontFamily: 'Josefin',
+              Padding(
+                padding: const EdgeInsets.only(left: 5, right: 5),
+                child: AnimatedContainer(
+                  height: height,
+                  duration: Duration(milliseconds: 200),
+                  child: Text(
+                    widget.desc,
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 18,
+                      fontFamily: 'Josefin',
+                    ),
                   ),
                 ),
               )

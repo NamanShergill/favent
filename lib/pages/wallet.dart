@@ -162,7 +162,7 @@ class Wallet extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: <Widget>[
-                        colorCardsmall('Buy Favor Points', Icons.attach_money, context, '', Colors.green),
+                        colorCardsmall('Buy Favor Points', Icons.attach_money, context, '/iap', Colors.green),
                         colorCardsmalldisabled('Sell Favor Points', Icons.money_off, context, '', Colors.red)
                       ],
                     ),

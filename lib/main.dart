@@ -5,6 +5,7 @@ import 'package:favent/pages/profile.dart';
 import 'package:favent/pages/dashboard.dart';
 import 'package:favent/pages/favors/reqCategories.dart';
 import 'package:favent/pages/authentication/login.dart';
+import 'package:favent/pages/inapp_purchases/iap_favent.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
           '/favorsreq': (BuildContext context) => reqCategories(),
           '/favorsinv': (BuildContext context) => inventory(),
           '/login': (BuildContext context) => loginpage(),
+          '/iap' : (BuildContext context) => buypoints(),
         }
     );
   }

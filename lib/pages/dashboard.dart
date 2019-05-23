@@ -121,7 +121,7 @@ class _DashboardState extends State<Dashboard> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: <Widget>[
                                       Text(
-                                        "Balance",
+                                        "Favor Points",
                                         style: TextStyle(
                                           fontSize: 18,
                                           color: Colors.grey,

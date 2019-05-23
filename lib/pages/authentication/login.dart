@@ -63,12 +63,10 @@ class _loginpageState extends State<loginpage> {
                   height: _media.height * 0.2,
                   duration: Duration(milliseconds: 350),
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                        const Color(0xFF81269D),
-                        const Color(0xFFEE112D)
-                      ],
-                          begin: Alignment.centerLeft,
-                          end:  Alignment.centerRight)
+                      image: DecorationImage(
+                          image: AssetImage('assets/images/bg.jpg'),
+                          fit: BoxFit.cover
+                      )
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

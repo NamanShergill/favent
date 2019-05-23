@@ -28,12 +28,10 @@ class Wallet extends StatelessWidget {
                           elevation: 4,
                           child: Container(
                             decoration: BoxDecoration(
-                                gradient: LinearGradient(colors: [
-                                  const Color(0xFFEE112D),
-                                  const Color(0xFF81269D),
-                                ],
-                                    begin: Alignment.centerLeft,
-                                    end:  Alignment.centerRight)
+                                image: DecorationImage(
+                                    image: AssetImage('assets/images/bg.jpg'),
+                                    fit: BoxFit.cover
+                                )
                             ),
                           ),
                         ),

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 
 class loginpage extends StatefulWidget {
   @override
@@ -78,11 +76,11 @@ class _loginpageState extends State<loginpage> {
                       Text(
                         button,
                         style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 60,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Josefin',
-                          letterSpacing: 0.4
+                            color: Colors.white,
+                            fontSize: 60,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Josefin',
+                            letterSpacing: 0.4
                         ),
                         textAlign: TextAlign.center,
                       ),

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:favent/Theme/colors.dart';
-import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:favent/src/utils/screen_size.dart';
-
+import 'package:favent/widgets/dropdown_category.dart';
 
 final DFFont= 'Josefin';
 
@@ -176,28 +174,7 @@ class Wallet extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(
-                    left: 25.0, right: 25, bottom: 20, top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'Manage Balance',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: DFFont,
-                      ),
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.grey,
-                      size: 20,
-                    )
-                  ],
-                ),
-              ),
+              category('Manage Balance', "Buy Favor points or sell them in exchange for PayTM cash."),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

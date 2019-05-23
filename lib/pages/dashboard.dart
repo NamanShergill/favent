@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:favent/Theme/colors.dart';
-import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:favent/src/utils/screen_size.dart';
 import 'package:favent/main.dart';
-import 'homepage.dart';
+import 'package:favent/widgets/dropdown_category.dart';
 
 final DFFont= 'Josefin';
 
@@ -220,28 +218,7 @@ class _DashboardState extends State<Dashboard> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(
-                    left: 25.0, right: 25, bottom: 20, top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'Favors',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: DFFont,
-                      ),
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.grey,
-                      size: 20,
-                    )
-                  ],
-                ),
-              ),
+              category('Favors', 'Request for items in exchange of Favor Points, or earn Favor points by lending them.'),
               Container(
                 alignment: Alignment.center,
                 child: SingleChildScrollView(
@@ -272,52 +249,22 @@ class _DashboardState extends State<Dashboard> {
           ],
         ),
         Divider(
-          height: 20,
+          height: 10,
         ),
+        category('Services', ''),
         Container(
-          color: Colors.grey.shade50,
-          width: _media.width,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(
-                    left: 25.0, right: 25, bottom: 20, top: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'Services',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: DFFont,
-                      ),
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.grey,
-                      size: 20,
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: SingleChildScrollView(
-                  physics: BouncingScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      colorCarddisabled('Browse', Icons.build, context, '' , Colors.green),
-                      colorCarddisabled('Add', Icons.add_box, context, '' , Colors.blue),
-                      colorCarddisabled('Previous Orders', Icons.playlist_play, context, '' , Colors.redAccent)
-                    ],
-                  ),
-                ),
-              )
-            ],
+          alignment: Alignment.center,
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                colorCarddisabled('Browse', Icons.build, context, '' , Colors.green),
+                colorCarddisabled('Add', Icons.add_box, context, '' , Colors.blue),
+                colorCarddisabled('Previous Orders', Icons.playlist_play, context, '' , Colors.redAccent)
+              ],
+            ),
           ),
         ),
         SizedBox(
@@ -329,28 +276,7 @@ class _DashboardState extends State<Dashboard> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(
-                    left: 25.0, right: 25, bottom: 20, top: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'Buy/Sell Items',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: DFFont,
-                      ),
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.grey,
-                      size: 20,
-                    )
-                  ],
-                ),
-              ),
+              category('Buy/Sell Items', ''),
               Container(
                 alignment: Alignment.center,
                 child: SingleChildScrollView(

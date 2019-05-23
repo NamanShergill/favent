@@ -69,12 +69,17 @@ class _buypointsState extends State<buypoints> {
                     letterSpacing: 0.4
                 ),
               ),
-              Column(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  colorCard('100 Points', '₹15','', context, Colors.green),
-                  colorCard('200 Points', '₹25','', context, Colors.orangeAccent),
-                  colorCard('500 Points', '₹45', '' , context, Colors.blue),
-                  colorCard('1000 Points', '₹85','', context, Colors.redAccent),
+                  Column(
+                    children: <Widget>[
+                      colorCard('100 Points', '₹15','', context, Colors.green),
+                      colorCard('200 Points', '₹25','', context, Colors.orangeAccent),
+                      colorCard('500 Points', '₹45', '' , context, Colors.blue),
+                      colorCard('1000 Points', '₹85','', context, Colors.redAccent),
+                    ],
+                  ),
                 ],
               ),
             ],
@@ -89,7 +94,7 @@ Widget colorCard(
     String amount, String price, String link, BuildContext context, Color color) {
   final _media = MediaQuery.of(context).size;
   return Container(
-    constraints: BoxConstraints(minHeight: 90),
+    constraints: BoxConstraints(minHeight: 90, minWidth: 250),
     margin: EdgeInsets.only(top: 15),
     height: screenAwareSize(70, context),
     width: _media.width - 60,

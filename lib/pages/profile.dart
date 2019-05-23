@@ -15,22 +15,23 @@ class ProfilePage extends StatelessWidget {
         top: 70,
       ),
       children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Profile',
-              style: TextStyle(
-                fontSize: 35,
-                fontWeight: FontWeight.bold,
-                fontFamily: DFFont,
+        Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Profile',
+                style: TextStyle(
+                  fontSize: 35,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: DFFont,
+                ),
               ),
-            ),
-            FlatButton(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              FlatButton(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                 onPressed: (){
-                  },
+                },
                 child: Row(
                   children: <Widget>[
                     Icon(
@@ -49,8 +50,9 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ],
                 ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
         SizedBox(
           height: 30,
@@ -72,8 +74,8 @@ class ProfilePage extends StatelessWidget {
               height: 120,
               width: 120,
               decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
+                shape: BoxShape.circle,
+                color: Colors.white,
               ),
               child: Icon(Icons.account_circle, size: 120, color: Colors.orangeAccent,),
             )
@@ -94,7 +96,7 @@ class ProfilePage extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            colorCard('Phone Number', '7733088115', context, Colors.purpleAccent)
+            colorCard('Phone Number', '7733088115', context, Colors.purple)
           ],
         ),
         SizedBox(
@@ -157,19 +159,19 @@ Widget colorCard(
               Text(
                 text,
                 style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: DFFont
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: DFFont
                 ),
               ),
               Text(
                 text2,
                 style: TextStyle(
-                  fontSize: 22,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: DFFont
+                    fontSize: 22,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: DFFont
                 ),
               )
             ],

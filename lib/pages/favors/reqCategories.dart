@@ -82,7 +82,7 @@ class _reqCategoriesState extends State<reqCategories> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  colorCard('Miscellaneous', '', context, Colors.redAccent)
+                  colorCard('Miscellaneous', '', context, Colors.red)
                 ],
               ),
               SizedBox(
@@ -193,7 +193,7 @@ class _inventoryState extends State<inventory> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  colorCard('Miscellaneous', '', context, Colors.redAccent)
+                  colorCard('Miscellaneous', '', context, Colors.red)
                 ],
               ),
               SizedBox(

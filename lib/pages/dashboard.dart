@@ -201,7 +201,7 @@ class _DashboardState extends State<Dashboard> {
                     children: <Widget>[
                       colorCard('Request Items', Icons.playlist_add, context, '/favorsreq', Colors.green),
                       colorCard('Inventory', Icons.playlist_add_check, context, '/favorsinv' , Colors.blue),
-                      colorCard('Previous Orders', Icons.playlist_play, context, '/login' , Colors.redAccent),
+                      colorCard('Previous Orders', Icons.playlist_play, context, '/login' , Colors.red),
                     ],
                   ),
                 ),
@@ -234,7 +234,7 @@ class _DashboardState extends State<Dashboard> {
               children: <Widget>[
                 colorCarddisabled('Browse', Icons.build, context, '' , Colors.green),
                 colorCarddisabled('Add', Icons.add_box, context, '' , Colors.blue),
-                colorCarddisabled('Previous Orders', Icons.playlist_play, context, '' , Colors.redAccent)
+                colorCarddisabled('Previous Orders', Icons.playlist_play, context, '' , Colors.red)
               ],
             ),
           ),
@@ -259,7 +259,7 @@ class _DashboardState extends State<Dashboard> {
                     children: <Widget>[
                       colorCarddisabled('Buy', Icons.attach_money, context, '', Colors.green),
                       colorCarddisabled('Sell', Icons.money_off, context, '', Colors.blue),
-                      colorCarddisabled('Previous Orders', Icons.playlist_play, context, '', Colors.redAccent),
+                      colorCarddisabled('Previous Orders', Icons.playlist_play, context, '', Colors.red),
                     ],
                   ),
                 ),

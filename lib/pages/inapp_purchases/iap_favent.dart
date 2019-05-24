@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter/material.dart';
 import 'package:favent/src/utils/screen_size.dart';
 import 'package:favent/Theme/colors.dart';
@@ -109,10 +108,10 @@ class _buypointsState extends State<buypoints> {
                     children: <Widget>[
                       Column(
                         children: <Widget>[
-                          colorCard('100 Points', '₹15','', context, Colors.green),
-                          colorCard('200 Points', '₹25','', context, Colors.orangeAccent),
-                          colorCard('500 Points', '₹45', '' , context, Colors.blue),
-                          colorCard('1000 Points', '₹85','', context, Colors.redAccent),
+                          colorCard('100 Points', '₹15','', context, theme2.shade300),
+                          colorCard('200 Points', '₹25','', context, theme2.shade200),
+                          colorCard('500 Points', '₹45', '' , context, theme2.shade100),
+                          colorCard('1000 Points', '₹85','', context, theme2.shade50),
                         ],
                       ),
                     ],

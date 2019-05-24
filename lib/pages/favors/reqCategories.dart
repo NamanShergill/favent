@@ -105,7 +105,7 @@ class _reqCategoriesState extends State<reqCategories> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      colorCard('Electronics', '', context, theme2.shade50)
+                      colorCard('Electronics', '', context, theme2.shade200)
                     ],
                   ),
                   Row(
@@ -117,7 +117,7 @@ class _reqCategoriesState extends State<reqCategories> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      colorCard('Miscellaneous', '', context, theme2.shade200)
+                      colorCard('Miscellaneous', '', context, theme2.shade50)
                     ],
                   ),
                   SizedBox(
@@ -255,7 +255,7 @@ class _inventoryState extends State<inventory> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      colorCard('Electronics', '', context, theme2.shade50)
+                      colorCard('Electronics', '', context, theme2.shade200)
                     ],
                   ),
                   Row(
@@ -267,7 +267,7 @@ class _inventoryState extends State<inventory> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      colorCard('Miscellaneous', '', context, theme2.shade200)
+                      colorCard('Miscellaneous', '', context, theme2.shade50)
                     ],
                   ),
                   SizedBox(

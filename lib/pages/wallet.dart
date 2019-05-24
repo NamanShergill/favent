@@ -169,24 +169,14 @@ class Wallet extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                    left: 25.0, right: 25, bottom: 20, top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'Overview',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: DFFont,
-                      ),
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.grey,
-                      size: 20,
-                    )
-                  ],
+                    left: 25.0, right: 25, top: 30),
+                child: Text(
+                  'Overview',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: DFFont,
+                  ),
                 ),
               ),
               Row(
@@ -213,7 +203,7 @@ Widget colorCard(
   final _media = MediaQuery.of(context).size;
   return Container(
     constraints: BoxConstraints(minHeight: 90),
-    margin: EdgeInsets.only(top: 15),
+    margin: EdgeInsets.only(top: 20),
     height: screenAwareSize(60, context),
     width: _media.width - 60,
     decoration: BoxDecoration(

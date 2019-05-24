@@ -3,6 +3,8 @@ import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:favent/pages/dashboard.dart';
 import 'package:favent/pages/wallet.dart';
 import 'package:favent/pages/profile.dart';
+import 'package:favent/Theme/colors.dart';
+import 'package:favent/pages/notifications.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -51,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
       children: <Widget>[
         Dashboard(),
         Wallet(),
+        notifPage(),
         ProfilePage(),
       ],
     );
@@ -81,10 +84,10 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundColor: Colors.red,
             ),
             BubbleBottomBarItem(
-                icon: Icon(Icons.account_balance_wallet, color: Colors.purpleAccent),
+                icon: Icon(Icons.account_balance_wallet, color: Colors.deepPurple),
                 title: Text('Wallet',
                   style: TextStyle(fontFamily: 'Josefin'),),
-                backgroundColor: Colors.purpleAccent
+                backgroundColor: Colors.deepPurple
             ),
             BubbleBottomBarItem(
                 icon: Icon(Icons.notifications_active, color: Colors.pink),
@@ -93,16 +96,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundColor: Colors.pink
             ),
             BubbleBottomBarItem(
-                icon: Icon(Icons.account_circle, color: Colors.blue),
+                icon: Icon(Icons.account_circle, color: Colors.indigo),
                 title: Text('Profile',
                   style: TextStyle(fontFamily: 'Josefin'),),
-                backgroundColor: Colors.blue
-            ),
-            BubbleBottomBarItem(
-                icon: Icon(Icons.settings, color: Colors.orangeAccent),
-                title: Text('Settings',
-                  style: TextStyle(fontFamily: 'Josefin'),),
-                backgroundColor: Colors.orangeAccent
+                backgroundColor: Colors.indigo
             ),
           ],
         )

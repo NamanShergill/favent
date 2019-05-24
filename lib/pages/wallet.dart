@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:favent/src/utils/screen_size.dart';
 import 'package:favent/widgets/dropdown_category.dart';
+import 'package:favent/Theme/colors.dart';
 
 final DFFont= 'Josefin';
 
@@ -160,8 +161,8 @@ class Wallet extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: <Widget>[
-                        colorCardsmall('Buy Favor Points', Icons.attach_money, context, '/iap', Colors.green),
-                        colorCardsmalldisabled('Sell Favor Points', Icons.money_off, context, '', Colors.red)
+                        colorCardsmall('Buy Favor Points', Icons.attach_money, context, '/iap', theme.shade50),
+                        colorCardsmalldisabled('Sell Favor Points', Icons.money_off, context, '', theme.shade100)
                       ],
                     ),
                   ),
@@ -182,7 +183,7 @@ class Wallet extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  colorCard('Transactions', '', context, Colors.pink),
+                  colorCard('Transactions', '', context, theme.shade200),
                 ],
               ),
 
@@ -310,7 +311,6 @@ Widget colorCardsmall(
       borderRadius: BorderRadius.circular(15),
     ),
     child: Material(
-      elevation: 2,
       borderRadius: BorderRadius.circular(15),
       color: color,
       child: InkWell(
@@ -358,13 +358,12 @@ Widget colorCardsmalldisabled(
     height: 100,
     width: _media.width / 2 - 50,
     decoration: BoxDecoration(
-      color: color,
+      color: tBlack,
       borderRadius: BorderRadius.circular(15),
     ),
     child: Material(
-      elevation: 2,
       borderRadius: BorderRadius.circular(15),
-      color: Colors.grey,
+      color: tBlack,
       child: InkWell(
         borderRadius: BorderRadius.circular(15),
         child: Padding(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:favent/src/utils/screen_size.dart';
+import 'package:favent/Theme/colors.dart';
 
 
 final DFFont= 'Josefin';
@@ -158,19 +159,19 @@ class ProfilePage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  colorCard('Username', 'Naman Shergill', context, Colors.green)
+                  colorCard('Username', 'Naman Shergill', context, theme.shade200)
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  colorCard('E-mail address', 'namanpreet@gmail.com', context, Colors.blue)
+                  colorCard('E-mail address', 'namanpreet@gmail.com', context, theme.shade200)
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  colorCard('Phone Number', '7733088115', context, Colors.purpleAccent)
+                  colorCard('Phone Number', '7733088115', context, theme.shade200)
                 ],
               ),
               SizedBox(
@@ -189,7 +190,7 @@ class ProfilePage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  colorCard('Balance', 2000.toString(), context, Color(0xFFff3f5e))
+                  colorCard('Balance', 2000.toString(), context, theme.shade200)
                 ],
               ),
               SizedBox(

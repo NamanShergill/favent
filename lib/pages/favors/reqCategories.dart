@@ -105,19 +105,19 @@ class _reqCategoriesState extends State<reqCategories> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      colorCard('Electronics', '', context, Colors.green)
+                      colorCard('Electronics', '', context, theme2.shade50)
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      colorCard('Stationery', '', context, Colors.blue)
+                      colorCard('Stationery', '', context, theme2.shade100)
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      colorCard('Miscellaneous', '', context, Colors.red)
+                      colorCard('Miscellaneous', '', context, theme2.shade200)
                     ],
                   ),
                   SizedBox(
@@ -126,18 +126,19 @@ class _reqCategoriesState extends State<reqCategories> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Icon(Icons.arrow_drop_down, color: Colors.grey,),
-                      Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: DFFont,),),
-                      Icon(Icons.arrow_drop_down, color: Colors.grey,),
+                      Icon(Icons.arrow_drop_down, color: tBlack,),
+                      Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: tBlack, fontSize: 20, fontFamily: DFFont,),),
+                      Icon(Icons.arrow_drop_down, color:tBlack,),
                     ],
                   ),
                   Divider(
-                    height: 20,
+                    height: 10,
+                    color: tBlack,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      colorCarddisabled('Consumables', '', context, Colors.purpleAccent)
+                      colorCarddisabled('Consumables', '', context, theme2.shade300)
                     ],
                   ),
                   SizedBox(
@@ -254,19 +255,19 @@ class _inventoryState extends State<inventory> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      colorCard('Electronics', '', context, Colors.green)
+                      colorCard('Electronics', '', context, theme2.shade50)
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      colorCard('Stationery', '', context, Colors.blue)
+                      colorCard('Stationery', '', context, theme2.shade100)
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      colorCard('Miscellaneous', '', context, Colors.red)
+                      colorCard('Miscellaneous', '', context, theme2.shade200)
                     ],
                   ),
                   SizedBox(
@@ -275,18 +276,19 @@ class _inventoryState extends State<inventory> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Icon(Icons.arrow_drop_down, color: Colors.grey,),
-                      Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: DFFont,),),
-                      Icon(Icons.arrow_drop_down, color: Colors.grey,),
+                      Icon(Icons.arrow_drop_down, color: tBlack,),
+                      Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: tBlack, fontSize: 20, fontFamily: DFFont,),),
+                      Icon(Icons.arrow_drop_down, color:tBlack,),
                     ],
                   ),
                   Divider(
-                    height: 20,
+                    height: 10,
+                    color: tBlack,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      colorCarddisabled('Consumables', '', context, Colors.purpleAccent)
+                      colorCarddisabled('Consumables', '', context, theme2.shade300)
                     ],
                   ),
                   SizedBox(
@@ -366,12 +368,12 @@ Widget colorCarddisabled(
     height: screenAwareSize(60, context),
     width: _media.width - 60,
     decoration: BoxDecoration(
-        color: color,
+        color: tBlack,
         borderRadius: BorderRadius.circular(15),
         ),
     child: Material(
       borderRadius: BorderRadius.circular(15),
-      color: Colors.grey,
+      color: tBlack,
       child: InkWell(
         borderRadius: BorderRadius.circular(15),
         child: Padding(

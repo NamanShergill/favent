@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:favent/src/utils/screen_size.dart';
 import 'package:favent/main.dart';
 import 'package:favent/widgets/dropdown_category.dart';
+import 'package:favent/Theme/colors.dart';
 
 final DFFont= 'Josefin';
 
@@ -14,259 +15,263 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     final _media = MediaQuery.of(context).size;
-    return ListView(
-      padding: EdgeInsets.all(0),
-      physics: BouncingScrollPhysics(),
-      children: <Widget>[
-        Container(
-          constraints: BoxConstraints(minHeight: 350),
-          color: Colors.grey.shade50,
-          height: _media.height / 2 - 80,
-          child: Stack(
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Expanded(
-                    flex: 5,
-                    child: Stack(
-                      children: <Widget>[
-                        Material(
-                          elevation: 4,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage('assets/images/bg2.jpg'),
-                                  fit: BoxFit.cover
-                                )
+    return Container(
+      color: Colors.grey.shade50,
+      child: ListView(
+        padding: EdgeInsets.all(0),
+        physics: BouncingScrollPhysics(),
+        children: <Widget>[
+          Container(
+            constraints: BoxConstraints(minHeight: 350),
+            color: Colors.transparent,
+            height: _media.height / 2 - 80,
+            child: Stack(
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Expanded(
+                      flex: 5,
+                      child: Stack(
+                        children: <Widget>[
+                          Material(
+                            elevation: 4,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage('assets/images/bg2.jpg'),
+                                    fit: BoxFit.cover
+                                  )
+                              ),
                             ),
                           ),
-                        ),
-                        Opacity(
-                          opacity: 0.3,
-                          child: Container(
-                            color: Colors.black87,
-                          ),
-                        )
-                      ],
+                          Opacity(
+                            opacity: 0.3,
+                            child: Container(
+                              color: Colors.black87,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Container(),
-                  )
-                ],
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  height: 160,
-                  width: _media.width - 30,
-                  child:
-                  Card(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                    elevation: 2,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Container(
-                          width: _media.width - 40,
-                          padding: EdgeInsets.only(left: 30),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Icon(Icons.account_circle, color: Colors.grey,),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "User",
-                                        style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: DFFont,
+                    Expanded(
+                      flex: 1,
+                      child: Container(),
+                    )
+                  ],
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    height: 160,
+                    width: _media.width - 30,
+                    child:
+                    Card(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                      elevation: 2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Container(
+                            width: _media.width - 40,
+                            padding: EdgeInsets.only(left: 30),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Row(
+                                  children: <Widget>[
+                                    Icon(Icons.account_circle, color: Colors.grey,),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                          "User",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: DFFont,
+                                          ),
                                         ),
-                                      ),
-                                      SizedBox(
-                                        height: 5,
-                                      ),
-                                      Text(
-                                        'Naman Shergill',
-                                        style: Theme.of(context).textTheme.headline.copyWith(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: DFFont,
+                                        SizedBox(
+                                          height: 5,
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 20),
-                              Row(
-                                children: <Widget>[
-                                  Icon(Icons.monetization_on, color: Colors.grey,),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        "Favor Points",
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: DFFont,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 5,
-                                      ),
-                                      Text('2000',
+                                        Text(
+                                          'Naman Shergill',
                                           style: Theme.of(context).textTheme.headline.copyWith(
                                             color: Colors.black,
                                             fontWeight: FontWeight.bold,
-                                            letterSpacing: 0.4,
                                             fontFamily: DFFont,
-                                          ))
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 20),
+                                Row(
+                                  children: <Widget>[
+                                    Icon(Icons.monetization_on, color: Colors.grey,),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                          "Favor Points",
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: DFFont,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text('2000',
+                                            style: Theme.of(context).textTheme.headline.copyWith(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                              letterSpacing: 0.4,
+                                              fontFamily: DFFont,
+                                            ))
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                top: _media.longestSide <= 775
-                    ? screenAwareSize(20, context)
-                    : screenAwareSize(35, context),
-                left: 10,
-                right: 10,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 70,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 10),
-                          child: Text(
-                            "Dashboard",
-                            style: TextStyle(
-                                fontSize: 50,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: "Josefin"),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          color: Colors.grey.shade50,
-          width: _media.width,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              category('Favors', 'Request for items in exchange of Favor Points, or earn Favor points by lending them.'),
-              Container(
-                alignment: Alignment.center,
-                child: SingleChildScrollView(
-                  physics: BouncingScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                Positioned(
+                  top: _media.longestSide <= 775
+                      ? screenAwareSize(20, context)
+                      : screenAwareSize(35, context),
+                  left: 10,
+                  right: 10,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      colorCard('Request Items', Icons.playlist_add, context, '/favorsreq', Colors.green),
-                      colorCard('Inventory', Icons.playlist_add_check, context, '/favorsinv' , Colors.blue),
-                      colorCard('Previous Orders', Icons.playlist_play, context, '/login' , Colors.red),
+                      SizedBox(
+                        height: 70,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            child: Text(
+                              "Dashboard",
+                              style: TextStyle(
+                                  fontSize: 50,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Josefin"),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
-              )
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 30,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Icon(Icons.arrow_drop_down, color: Colors.grey,),
-            Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: DFFont,),),
-            Icon(Icons.arrow_drop_down, color: Colors.grey,),
-          ],
-        ),
-        Divider(
-          height: 10,
-        ),
-        category('Services', ''),
-        Container(
-          alignment: Alignment.center,
-          child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                colorCarddisabled('Browse', Icons.build, context, '' , Colors.green),
-                colorCarddisabled('Add', Icons.add_box, context, '' , Colors.blue),
-                colorCarddisabled('Previous Orders', Icons.playlist_play, context, '' , Colors.red)
               ],
             ),
           ),
-        ),
-        SizedBox(
-          height: 15,
-        ),
-        Container(
-          color: Colors.grey.shade50,
-          width: _media.width,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              category('Buy/Sell Items', ''),
-              Container(
-                alignment: Alignment.center,
-                child: SingleChildScrollView(
-                  physics: BouncingScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      colorCarddisabled('Buy', Icons.attach_money, context, '', Colors.green),
-                      colorCarddisabled('Sell', Icons.money_off, context, '', Colors.blue),
-                      colorCarddisabled('Previous Orders', Icons.playlist_play, context, '', Colors.red),
-                    ],
+          Container(
+            color: Colors.transparent,
+            width: _media.width,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                category('Favors', 'Request for items in exchange of Favor Points, or earn Favor points by lending them.'),
+                Container(
+                  alignment: Alignment.center,
+                  child: SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        colorCard('Request Items', Icons.playlist_add, context, '/favorsreq', theme.shade50),
+                        colorCard('Inventory', Icons.playlist_add_check, context, '/favorsinv' , theme.shade100),
+                        colorCard('Previous Orders', Icons.playlist_play, context, '/login' , theme.shade200),
+                      ],
+                    ),
                   ),
-                ),
-              ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Icon(Icons.arrow_drop_down, color: tBlack,),
+              Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: tBlack, fontSize: 20, fontFamily: DFFont,),),
+              Icon(Icons.arrow_drop_down, color:tBlack,),
             ],
           ),
-        ),
+          Divider(
+            height: 20,
+            color: tBlack,
+          ),
+          category('Services', ''),
+          Container(
+            color: Colors.transparent,
+            alignment: Alignment.center,
+            child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  colorCarddisabled('Browse', Icons.build, context, '' , theme.shade50),
+                  colorCarddisabled('Add', Icons.add_box, context, '' , theme.shade100),
+                  colorCarddisabled('Previous Orders', Icons.playlist_play, context, '' , theme.shade200)
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Container(
+            color: Colors.transparent,
+            width: _media.width,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                category('Buy/Sell Items', ''),
+                Container(
+                  alignment: Alignment.center,
+                  child: SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        colorCarddisabled('Buy', Icons.attach_money, context, '', Colors.green),
+                        colorCarddisabled('Sell', Icons.money_off, context, '', Colors.blue),
+                        colorCarddisabled('Previous Orders', Icons.playlist_play, context, '', Colors.red),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
 //          SizedBox(
 //            height: 15,
 //          ),
@@ -284,7 +289,8 @@ class _DashboardState extends State<Dashboard> {
 //          SizedBox(
 //            height: 20,
 //          ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -302,7 +308,6 @@ Widget colorCard(
         borderRadius: BorderRadius.circular(15),
     ),
     child: Material(
-      elevation: 2,
       borderRadius: BorderRadius.circular(15),
       color: color,
       child: InkWell(
@@ -387,12 +392,12 @@ Widget colorCarddisabled(
     height: 100,
     width: _media.width / 3 - 30,
     decoration: BoxDecoration(
-      color: color,
+      color: tBlack,
       borderRadius: BorderRadius.circular(15),
     ),
     child: Material(
       borderRadius: BorderRadius.circular(15),
-      color: Colors.grey,
+      color: tBlack,
       child: InkWell(
         borderRadius: BorderRadius.circular(15),
         child: Padding(

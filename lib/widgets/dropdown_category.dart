@@ -18,12 +18,14 @@ class _categoryState extends State<category> {
     return Padding(
       padding: EdgeInsets.only(top: 5),
       child: Material(
+        color: Colors.transparent,
         child: Padding(
           padding: EdgeInsets.only(
               left: 20.0, right: 20,top: 5),
           child: Column(
             children: <Widget>[
               Material(
+                color: Colors.transparent,
                 child: InkWell(
                   onTap: (){
                     setState(() {

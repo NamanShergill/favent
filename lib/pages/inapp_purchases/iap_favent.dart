@@ -18,77 +18,118 @@ class _buypointsState extends State<buypoints> {
     return Scaffold(
       backgroundColor: Colors.grey.shade50,
       body:
-      ListView(
+      SingleChildScrollView(
         physics: BouncingScrollPhysics(),
-        padding: EdgeInsets.only(
-          left: 20,
-          right: 20,
-          top: 70,
-        ),
-        children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  InkWell(
-                    borderRadius: BorderRadius.circular(15),
-                    onTap: (){
-                      Navigator.of(context).pop();
-                    },
-                    child: Icon(
-                      Icons.arrow_back,
-                      size: 40,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Stack(
+              children: <Widget>[
+                Material(
+                  elevation: 6,
+                  child: Container(
+                    padding: EdgeInsets.only(left: 10, right: 10),
+                    constraints: BoxConstraints(minHeight: 110),
+                    height: _media.height * 0.115,
+                    decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        image: DecorationImage(
+                          alignment: Alignment.center,
+                          image: AssetImage('assets/images/bg.jpg'),
+                          fit: BoxFit.none,
+                        )
                     ),
                   ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
-                    'Buy Favor Points',
-                    style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: DFFont,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Text(
-                'Purchase Options',
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    inherit: true,
-                    fontFamily: DFFont,
-                    letterSpacing: 0.4
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Column(
+                Container(
+                  constraints: BoxConstraints(minHeight: 95),
+                  height: _media.height * 0.099,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
-                      colorCard('100 Points', '₹15','', context, Colors.green),
-                      colorCard('200 Points', '₹25','', context, Colors.orangeAccent),
-                      colorCard('500 Points', '₹45', '' , context, Colors.blue),
-                      colorCard('1000 Points', '₹85','', context, Colors.redAccent),
+                      Row(
+                        children: <Widget>[
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              borderRadius: BorderRadius.circular(15),
+                              onTap: (){
+                                Navigator.pop(context);
+                              },
+                              child: IconButton(
+                                icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+                                iconSize: 20,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            'Buy Favor Points',
+                            style: TextStyle(
+                                fontSize: _media.longestSide * 0.03,
+                                fontFamily: DFFont,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                        ],
+                      )
                     ],
                   ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 20,
+                right: 20,
+              ),
+              child: Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    'Purchase Options',
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: DFFont,
+                        letterSpacing: 0.4
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Column(
+                        children: <Widget>[
+                          colorCard('100 Points', '₹15','', context, Colors.green),
+                          colorCard('200 Points', '₹25','', context, Colors.orangeAccent),
+                          colorCard('500 Points', '₹45', '' , context, Colors.blue),
+                          colorCard('1000 Points', '₹85','', context, Colors.redAccent),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
                 ],
               ),
-            ],
-          ),
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
 }
+
 
 Widget colorCard(
     String amount, String price, String link, BuildContext context, Color color) {
@@ -96,7 +137,7 @@ Widget colorCard(
   return Container(
     constraints: BoxConstraints(minHeight: 90, minWidth: 250),
     margin: EdgeInsets.only(top: 15),
-    height: screenAwareSize(70, context),
+    height: screenAwareSize(60, context),
     width: _media.width - 60,
     decoration: BoxDecoration(
         color: color,
@@ -127,7 +168,7 @@ Widget colorCard(
                 children: <Widget>[
                   Icon(
                     Icons.monetization_on,
-                    size: 30,
+                    size: 25,
                     color: Colors.white,
                   ),
                   SizedBox(
@@ -136,7 +177,7 @@ Widget colorCard(
                   Text(
                     amount,
                     style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 25,
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
                         fontFamily: DFFont
@@ -147,7 +188,7 @@ Widget colorCard(
               Text(
                 price,
                 style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 18,
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontFamily: DFFont

@@ -29,7 +29,7 @@ class Wallet extends StatelessWidget {
                           child: Container(
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                                    image: AssetImage('assets/images/bg.jpg'),
+                                    image: AssetImage('assets/images/bg2.jpg'),
                                     fit: BoxFit.cover
                                 )
                             ),
@@ -214,7 +214,7 @@ Widget colorCard(
   return Container(
     constraints: BoxConstraints(minHeight: 90),
     margin: EdgeInsets.only(top: 15),
-    height: screenAwareSize(70, context),
+    height: screenAwareSize(60, context),
     width: _media.width - 60,
     decoration: BoxDecoration(
         color: color,
@@ -267,7 +267,7 @@ Widget colorCarddisabled(
   return Container(
     constraints: BoxConstraints(minHeight: 90),
     margin: EdgeInsets.only(top: 15),
-    height: screenAwareSize(70, context),
+    height: 100,
     width: _media.width - 60,
     decoration: BoxDecoration(
         color: Colors.grey,
@@ -287,7 +287,7 @@ Widget colorCarddisabled(
               Text(
                 text,
                 style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 20,
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontFamily: DFFont
@@ -296,7 +296,7 @@ Widget colorCarddisabled(
               Icon(
                 Icons.arrow_forward_ios,
                 color: Colors.white,
-                size: 25,
+                size: 20,
               )
             ],
           ),
@@ -313,7 +313,7 @@ Widget colorCardsmall(
   return Container(
     constraints: BoxConstraints(minWidth: 170),
     margin: EdgeInsets.all(10),
-    height: 130,
+    height: 100,
     width: _media.width / 2 - 50,
     decoration: BoxDecoration(
       color: color,
@@ -340,7 +340,7 @@ Widget colorCardsmall(
               Text(
                 text,
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 20,
                   color: Colors.white,
                   fontFamily: DFFont,
                 ),
@@ -349,7 +349,7 @@ Widget colorCardsmall(
               Icon(
                 icon,
                 color: Colors.white,
-                size: 25,
+                size: 20,
               )
             ],
           ),
@@ -365,7 +365,7 @@ Widget colorCardsmalldisabled(
   return Container(
     constraints: BoxConstraints(minWidth: 170),
     margin: EdgeInsets.all(10),
-    height: 130,
+    height: 100,
     width: _media.width / 2 - 50,
     decoration: BoxDecoration(
       color: color,
@@ -386,7 +386,7 @@ Widget colorCardsmalldisabled(
               Text(
                 text,
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 20,
                   color: Colors.white,
                   fontFamily: DFFont,
                 ),
@@ -396,12 +396,12 @@ Widget colorCardsmalldisabled(
                   Icon(
                     icon,
                     color: Colors.white,
-                    size: 25,
+                    size: 20,
                   ),
                   Text(
                     '(Coming Soon)',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 15,
                       color: Colors.white,
                       fontFamily: DFFont,
                     ),

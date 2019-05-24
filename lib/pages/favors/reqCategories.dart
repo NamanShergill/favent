@@ -16,101 +16,138 @@ class _reqCategoriesState extends State<reqCategories> {
     return Scaffold(
       backgroundColor: Colors.grey.shade50,
       body:
-      ListView(
+      SingleChildScrollView(
         physics: BouncingScrollPhysics(),
-        padding: EdgeInsets.only(
-          left: 20,
-          right: 20,
-          top: 70,
-        ),
-        children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  InkWell(
-                    borderRadius: BorderRadius.circular(15),
-                    onTap: (){
-                      Navigator.of(context).pop();
-                    },
-                    child: Icon(
-                      Icons.arrow_back,
-                      size: 40,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Stack(
+              children: <Widget>[
+                Material(
+                  elevation: 6,
+                  child: Container(
+                    padding: EdgeInsets.only(left: 10, right: 10),
+                    constraints: BoxConstraints(minHeight: 110),
+                    height: _media.height * 0.115,
+                    decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        image: DecorationImage(
+                          alignment: Alignment.center,
+                          image: AssetImage('assets/images/bg.jpg'),
+                          fit: BoxFit.none,
+                        )
                     ),
                   ),
+                ),
+                Container(
+                  constraints: BoxConstraints(minHeight: 95),
+                  height: _media.height * 0.099,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              borderRadius: BorderRadius.circular(15),
+                              onTap: (){
+                                Navigator.pop(context);
+                              },
+                              child: IconButton(
+                                icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+                                iconSize: 20,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            'Request Items',
+                            style: TextStyle(
+                                fontSize: 25,
+                                fontFamily: DFFont,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 20,
+                right: 20,
+              ),
+              child: Column(
+                children: <Widget>[
                   SizedBox(
-                    width: 20,
+                    height: 30,
                   ),
                   Text(
-                    'Request Items',
+                    'Categories',
                     style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: DFFont,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: DFFont,
+                        letterSpacing: 0.4
                     ),
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      colorCard('Electronics', '', context, Colors.green)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      colorCard('Stationery', '', context, Colors.blue)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      colorCard('Miscellaneous', '', context, Colors.red)
+                    ],
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(Icons.arrow_drop_down, color: Colors.grey,),
+                      Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: DFFont,),),
+                      Icon(Icons.arrow_drop_down, color: Colors.grey,),
+                    ],
+                  ),
+                  Divider(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      colorCarddisabled('Consumables', '', context, Colors.purpleAccent)
+                    ],
+                  ),
+                  SizedBox(
+                    height: 30,
+                  )
                 ],
               ),
-              SizedBox(
-                height: 30,
-              ),
-              Text(
-                'Categories',
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    inherit: true,
-                    fontFamily: DFFont,
-                    letterSpacing: 0.4
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  colorCard('Electronics', '', context, Colors.green)
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  colorCard('Stationery', '', context, Colors.blue)
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  colorCard('Miscellaneous', '', context, Colors.red)
-                ],
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(Icons.arrow_drop_down, color: Colors.grey,),
-                  Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: DFFont,),),
-                  Icon(Icons.arrow_drop_down, color: Colors.grey,),
-                ],
-              ),
-              Divider(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  colorCarddisabled('Consumables', '', context, Colors.purpleAccent)
-                ],
-              ),
-              SizedBox(
-                height: 30,
-              )
-            ],
-          ),
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
@@ -128,100 +165,138 @@ class _inventoryState extends State<inventory> {
     return Scaffold(
       backgroundColor: Colors.grey.shade50,
       body:
-      ListView(
+      SingleChildScrollView(
         physics: BouncingScrollPhysics(),
-        padding: EdgeInsets.only(
-          left: 20,
-          right: 20,
-          top: 70,
-        ),
-        children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  InkWell(
-                    borderRadius: BorderRadius.circular(15),
-                    onTap: (){
-                      Navigator.of(context).pop();
-                    },
-                    child: Icon(
-                      Icons.arrow_back,
-                      size: 40,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Stack(
+              children: <Widget>[
+                Material(
+                  elevation: 6,
+                  child: Container(
+                    padding: EdgeInsets.only(left: 10, right: 10),
+                    constraints: BoxConstraints(minHeight: 110),
+                    height: _media.height * 0.115,
+                    decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        image: DecorationImage(
+                          alignment: Alignment.center,
+                          image: AssetImage('assets/images/bg.jpg'),
+                          fit: BoxFit.none,
+                        )
                     ),
                   ),
+                ),
+                Container(
+                  constraints: BoxConstraints(minHeight: 95),
+                  height: _media.height * 0.099,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              borderRadius: BorderRadius.circular(15),
+                              onTap: (){
+                                Navigator.pop(context);
+                              },
+                              child: IconButton(
+                                icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+                                iconSize: 20,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            'Inventory',
+                            style: TextStyle(
+                                fontSize: _media.longestSide * 0.03,
+                                fontFamily: DFFont,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 20,
+                right: 20,
+              ),
+              child: Column(
+                children: <Widget>[
                   SizedBox(
-                    width: 20,
+                    height: 30,
                   ),
                   Text(
-                    'Inventory',
+                    'Categories',
                     style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: DFFont,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: DFFont,
+                        letterSpacing: 0.4
                     ),
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      colorCard('Electronics', '', context, Colors.green)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      colorCard('Stationery', '', context, Colors.blue)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      colorCard('Miscellaneous', '', context, Colors.red)
+                    ],
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(Icons.arrow_drop_down, color: Colors.grey,),
+                      Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: DFFont,),),
+                      Icon(Icons.arrow_drop_down, color: Colors.grey,),
+                    ],
+                  ),
+                  Divider(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      colorCarddisabled('Consumables', '', context, Colors.purpleAccent)
+                    ],
+                  ),
+                  SizedBox(
+                    height: 30,
+                  )
                 ],
               ),
-              SizedBox(
-                height: 30,
-              ),
-              Text(
-                'Categories',
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: DFFont,
-                    letterSpacing: 0.4
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  colorCard('Electronics', '', context, Colors.green)
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  colorCard('Stationery', '', context, Colors.blue)
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  colorCard('Miscellaneous', '', context, Colors.red)
-                ],
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(Icons.arrow_drop_down, color: Colors.grey,),
-                  Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: DFFont,),),
-                  Icon(Icons.arrow_drop_down, color: Colors.grey,),
-                ],
-              ),
-              Divider(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  colorCarddisabled('Consumables', '', context, Colors.purpleAccent)
-                ],
-              ),
-              SizedBox(
-                height: 30,
-              )
-            ],
-          ),
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
@@ -234,7 +309,7 @@ Widget colorCard(
   return Container(
     constraints: BoxConstraints(minHeight: 90),
     margin: EdgeInsets.only(top: 15),
-    height: screenAwareSize(70, context),
+    height: screenAwareSize(60, context),
     width: _media.width - 60,
     decoration: BoxDecoration(
         color: color,
@@ -288,7 +363,7 @@ Widget colorCarddisabled(
   return Container(
     constraints: BoxConstraints(minHeight: 90),
     margin: EdgeInsets.only(top: 15),
-    height: screenAwareSize(70, context),
+    height: screenAwareSize(60, context),
     width: _media.width - 60,
     decoration: BoxDecoration(
         color: color,

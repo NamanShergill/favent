@@ -29,8 +29,12 @@ class _MyHomePageState extends State<MyHomePage> {
     Wallet()
   ];
 
+  double alertHeight = 60;
+  double alertHeight2= 60;
+
   @override
   Widget build(BuildContext context) {
+    final _media = MediaQuery.of(context).size;
     final pageController = PageController(
       initialPage: currentIndex,
     );
@@ -38,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
     void changePage(int index) {
       setState(() {
         currentIndex = index;
-        pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease);
+        pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.easeOutQuint);
       });
     }
 
@@ -58,7 +62,158 @@ class _MyHomePageState extends State<MyHomePage> {
       ],
     );
     return Scaffold(
-        body: pageView,
+        body: Column(
+          children: <Widget>[
+            Flexible(
+                child: pageView),
+            Container(
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5,  right: 5),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.grey.shade50,
+                      ),
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        height: alertHeight,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: theme2.shade400,
+                        ),
+                        width: _media.width,
+                        child: Material(
+                          borderRadius: BorderRadius.circular(15),
+                          color: theme2.shade400,
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(15),
+                            onTap: (){
+                              setState(() {
+                                alertHeight = 0;
+                                currentIndex = 2;
+                                pageController.animateToPage(2, duration: Duration(milliseconds: 500), curve: Curves.ease);
+                              });
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.all(15),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        'You have active Requests',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.white,
+                                          fontFamily: 'Josefin',
+                                        ),
+                                      ),
+                                      Icon(
+                                        Icons.playlist_play,
+                                        color: Colors.white,
+                                        size: 20,
+                                      )
+                                    ],
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.white,
+                                    size: 20,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  AnimatedContainer(
+                    duration: Duration(milliseconds: 350),
+                    child: SizedBox(
+                      height: alertHeight/12,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5,  right: 5),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.grey.shade50,
+                      ),
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        height: alertHeight2 = currentIndex != 2
+                            ? alertHeight2 = 60
+                            : alertHeight2 = 0,
+                        width: _media.width,
+                        decoration: BoxDecoration(
+                          color: theme2.shade400,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Material(
+                          borderRadius: BorderRadius.circular(15),
+                          color: theme2.shade400,
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(15),
+                            onTap: (){
+                              setState(() {
+                                alertHeight2 = 0;
+                                currentIndex = 2;
+                                pageController.animateToPage(2, duration: Duration(milliseconds: 500), curve: Curves.ease);
+                              });
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.all(15),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        'You have unread notifications',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.white,
+                                          fontFamily: 'Josefin',
+                                        ),
+                                      ),
+                                      Icon(
+                                        Icons.notification_important,
+                                        color: Colors.white,
+                                        size: 20,
+                                      )
+                                    ],
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.white,
+                                    size: 20,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  AnimatedContainer(
+                    duration: Duration(milliseconds: 350),
+                    child: SizedBox(
+                      height: alertHeight2/12,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
 //        floatingActionButton: FloatingActionButton(
 //          onPressed: (){},
 //          child: Icon(Icons.add),

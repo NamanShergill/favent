@@ -218,7 +218,7 @@ class _notifPageState extends State<notifPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
               ],
             ),

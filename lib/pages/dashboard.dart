@@ -193,6 +193,9 @@ class _DashboardState extends State<Dashboard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                SizedBox(
+                  height: 5,
+                ),
                 category('Favors', 'Request for items in exchange of Favor Points, or earn Favor points by lending them.'),
                 Container(
                   alignment: Alignment.center,
@@ -213,7 +216,7 @@ class _DashboardState extends State<Dashboard> {
             ),
           ),
           SizedBox(
-            height: 30,
+            height: 40,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -224,7 +227,7 @@ class _DashboardState extends State<Dashboard> {
             ],
           ),
           Divider(
-            height: 20,
+            height: 10,
             color: tBlack,
           ),
           category('Services', ''),
@@ -269,26 +272,12 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 10,
+                )
               ],
             ),
           ),
-//          SizedBox(
-//            height: 15,
-//          ),
-//          Divider(
-//            height: 20,
-//          ),
-//          Row(
-//            mainAxisAlignment: MainAxisAlignment.center,
-//            children: <Widget>[
-//              Icon(Icons.arrow_drop_up, color: Colors.grey,),
-//              Text("Coming Soon", textAlign: TextAlign.center,style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: 'Josefin),),
-//              Icon(Icons.arrow_drop_up, color: Colors.grey,),
-//            ],
-//          ),
-//          SizedBox(
-//            height: 20,
-//          ),
         ],
       ),
     );
@@ -300,7 +289,7 @@ Widget colorCard(
   final _media = MediaQuery.of(context).size;
   return Container(
     constraints: BoxConstraints(minWidth: 100),
-    margin: EdgeInsets.all(10),
+    margin: EdgeInsets.only(left: 10, right: 10),
     height: 100,
     width: _media.width / 3 - 30,
     decoration: BoxDecoration(
@@ -344,51 +333,12 @@ Widget colorCard(
   );
 }
 
-Widget dbCards (String name, IconData icon, BuildContext context, Color color) {
-  return Card(
-    elevation: 1,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5), ),
-    child: InkWell(
-      borderRadius: BorderRadius.circular(5),
-      onTap: (){
-      },
-      child: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Card(
-              margin: EdgeInsets.only(top: 10),
-              elevation: 0,
-              shape: CircleBorder(),
-              color: color,
-              child: Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Icon(icon, color: Colors.white, size: 25,)),
-            ),
-            Container(
-              padding: EdgeInsets.all(5),
-              width: 120,
-              child: Text(name,
-                style: TextStyle(
-                  inherit: true,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey,
-                  fontSize: 15.0,),
-                textAlign: TextAlign.center,),
-            )
-          ],
-        ),
-      ),
-    ),
-  );
-}
-
 Widget colorCarddisabled(
     String text, IconData icon, BuildContext context, String route, Color color) {
   final _media = MediaQuery.of(context).size;
   return Container(
     constraints: BoxConstraints(minWidth: 100),
-    margin: EdgeInsets.all(10),
+    margin: EdgeInsets.only(left: 10, right: 10),
     height: 100,
     width: _media.width / 3 - 30,
     decoration: BoxDecoration(

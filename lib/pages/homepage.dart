@@ -3,6 +3,9 @@ import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:favent/pages/dashboard.dart';
 import 'package:favent/pages/wallet.dart';
 import 'package:favent/pages/profile.dart';
+import 'package:favent/Theme/colors.dart';
+import 'package:favent/pages/notifications.dart';
+import 'dart:async';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -27,8 +30,12 @@ class _MyHomePageState extends State<MyHomePage> {
     Wallet()
   ];
 
+  double alertHeight = 60;
+  double alertHeight2= 60;
+
   @override
   Widget build(BuildContext context) {
+    final _media = MediaQuery.of(context).size;
     final pageController = PageController(
       initialPage: currentIndex,
     );
@@ -36,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
     void changePage(int index) {
       setState(() {
         currentIndex = index;
-        pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease);
+        pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.easeOutQuint);
       });
     }
 
@@ -44,18 +51,27 @@ class _MyHomePageState extends State<MyHomePage> {
       controller: pageController,
       physics: BouncingScrollPhysics(),
       onPageChanged: (int index) {
-      setState(() {
-        currentIndex = index;
-      });
-    },
+        setState(() {
+          currentIndex = index;
+        });
+      },
       children: <Widget>[
         Dashboard(),
         Wallet(),
+        notifPage(),
         ProfilePage(),
       ],
     );
     return Scaffold(
-        body: pageView,
+        body: Stack(
+          children: <Widget>[
+            pageView,
+            Align(
+                alignment: Alignment.bottomRight,
+                child: alert()
+            ),
+          ],
+        ),
 //        floatingActionButton: FloatingActionButton(
 //          onPressed: (){},
 //          child: Icon(Icons.add),
@@ -81,10 +97,10 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundColor: Colors.red,
             ),
             BubbleBottomBarItem(
-                icon: Icon(Icons.account_balance_wallet, color: Colors.purpleAccent),
+                icon: Icon(Icons.account_balance_wallet, color: Colors.deepPurple),
                 title: Text('Wallet',
                   style: TextStyle(fontFamily: 'Josefin'),),
-                backgroundColor: Colors.purpleAccent
+                backgroundColor: Colors.deepPurple
             ),
             BubbleBottomBarItem(
                 icon: Icon(Icons.notifications_active, color: Colors.pink),
@@ -93,19 +109,75 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundColor: Colors.pink
             ),
             BubbleBottomBarItem(
-                icon: Icon(Icons.account_circle, color: Colors.blue),
+                icon: Icon(Icons.account_circle, color: Colors.indigo),
                 title: Text('Profile',
                   style: TextStyle(fontFamily: 'Josefin'),),
-                backgroundColor: Colors.blue
-            ),
-            BubbleBottomBarItem(
-                icon: Icon(Icons.settings, color: Colors.orangeAccent),
-                title: Text('Settings',
-                  style: TextStyle(fontFamily: 'Josefin'),),
-                backgroundColor: Colors.orangeAccent
+                backgroundColor: Colors.indigo
             ),
           ],
         )
+    );
+  }
+}
+
+class alert extends StatefulWidget {
+  @override
+  _alertState createState() => _alertState();
+}
+
+class _alertState extends State<alert> with SingleTickerProviderStateMixin{
+  AnimationController _controller;
+  Timer _everySecond;
+  double width;
+
+  @override
+  void initState(){
+    super.initState();
+    _controller = AnimationController(
+        duration: const  Duration(seconds: 2),
+        vsync: this
+    )..repeat();
+    _everySecond = Timer.periodic(Duration(seconds: 1), (Timer t) {
+      if(_everySecond.tick<=3){
+        setState(() {
+        });
+      }
+      else{
+        setState(() {
+          width=50;
+        });
+      }
+    });
+  }
+
+  @override
+  void dispose(){
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedContainer(
+      height: 60,
+      color: Colors.green,
+      width: width,
+      duration: Duration(milliseconds: 800),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          AnimatedContainer(
+            width: width-50,
+            duration: Duration(milliseconds: 800),
+            child: Text('Test'),
+          ),
+          AnimatedContainer(
+              width: width==50?50:0,
+              duration: Duration(milliseconds: 800),
+              child: Icon(Icons.notification_important, color: Colors.white, size: 50,)
+          )
+        ],
+      ),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:favent/pages/navtesting.dart';
 import 'package:flutter/material.dart';
 import 'package:favent/src/utils/screen_size.dart';
 import 'package:favent/main.dart';
@@ -207,7 +208,7 @@ class _DashboardState extends State<Dashboard> {
                       children: <Widget>[
                         colorCard('Request Items', Icons.playlist_add, context, '/favorsreq', theme.shade50),
                         colorCard('Inventory', Icons.playlist_add_check, context, '/favorsinv' , theme.shade100),
-                        colorCard('Previous Orders', Icons.playlist_play, context, '/login' , theme.shade200),
+                        colorCard('Previous Orders', Icons.playlist_play, context, '' , theme.shade200),
                       ],
                     ),
                   ),
@@ -272,11 +273,22 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 10,
-                )
               ],
             ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          RaisedButton(
+            onPressed: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => navtesting()
+                  )
+              );
+            },
+            child: Text('Navigation'),
           ),
         ],
       ),

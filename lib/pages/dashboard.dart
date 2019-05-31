@@ -203,13 +203,19 @@ class _DashboardState extends State<Dashboard> {
                   child: SingleChildScrollView(
                     physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        colorCard('Request Items', Icons.playlist_add, context, '/favorsreq', theme.shade50),
-                        colorCard('Inventory', Icons.playlist_add_check, context, '/favorsinv' , theme.shade100),
-                        colorCard('Previous Orders', Icons.playlist_play, context, '' , theme.shade200),
-                      ],
+                    child: Container(
+                      height: 110,
+                      child: Align(
+                        alignment: Alignment.topCenter,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            colorCard('Request Items', Icons.playlist_add, context, '/favorsreq', theme.shade50),
+                            colorCard('Inventory', Icons.playlist_add_check, context, '/favorsinv' , theme.shade100),
+                            colorCard('Previous Orders', Icons.playlist_play, context, '' , theme.shade200),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 )
@@ -217,7 +223,7 @@ class _DashboardState extends State<Dashboard> {
             ),
           ),
           SizedBox(
-            height: 40,
+            height: 30,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -238,18 +244,24 @@ class _DashboardState extends State<Dashboard> {
             child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  colorCarddisabled('Browse', Icons.build, context, '' , theme.shade50),
-                  colorCarddisabled('Add', Icons.add_box, context, '' , theme.shade100),
-                  colorCarddisabled('Previous Orders', Icons.playlist_play, context, '' , theme.shade200)
-                ],
+              child: Container(
+                height: 110,
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      colorCarddisabled('Browse', Icons.build, context, '' , theme.shade50),
+                      colorCarddisabled('Add', Icons.add_box, context, '' , theme.shade100),
+                      colorCarddisabled('Previous Orders', Icons.playlist_play, context, '' , theme.shade200)
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
           SizedBox(
-            height: 15,
+            height: 5,
           ),
           Container(
             color: Colors.transparent,
@@ -263,21 +275,24 @@ class _DashboardState extends State<Dashboard> {
                   child: SingleChildScrollView(
                     physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        colorCarddisabled('Buy', Icons.attach_money, context, '', Colors.green),
-                        colorCarddisabled('Sell', Icons.money_off, context, '', Colors.blue),
-                        colorCarddisabled('Previous Orders', Icons.playlist_play, context, '', Colors.red),
-                      ],
+                    child: Container(
+                      height: 110,
+                      child: Align(
+                        alignment: Alignment.topCenter,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            colorCarddisabled('Buy', Icons.attach_money, context, '', Colors.green),
+                            colorCarddisabled('Sell', Icons.money_off, context, '', Colors.blue),
+                            colorCarddisabled('Previous Orders', Icons.playlist_play, context, '', Colors.red),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ],
             ),
-          ),
-          SizedBox(
-            height: 10,
           ),
           RaisedButton(
             onPressed: (){
@@ -307,6 +322,13 @@ Widget colorCard(
     decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+              color: color.withOpacity(0.4),
+              blurRadius: 3,
+              spreadRadius: 0.2,
+              offset: Offset(0, 2)),
+        ]
     ),
     child: Material(
       borderRadius: BorderRadius.circular(15),

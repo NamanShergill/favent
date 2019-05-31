@@ -33,7 +33,7 @@ class _categoryState extends State<category> {
             ),
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                padding: EdgeInsets.only(left: 20, right: 20, bottom: 15),
                 child: Text(
                   widget.desc,
                   textAlign: TextAlign.justify,

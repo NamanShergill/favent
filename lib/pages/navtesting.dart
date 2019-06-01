@@ -1,3 +1,5 @@
+import 'package:favent/pages/favors/transactions/QRgen.dart';
+import 'package:favent/pages/favors/transactions/QRscan.dart';
 import 'package:flutter/material.dart';
 
 class navtesting extends StatefulWidget {
@@ -22,7 +24,19 @@ class _navtestingState extends State<navtesting> {
                   Navigator.pushNamed(context, '/login');
                 },
                 child: Text('Login/Signup'),
-              )
+              ),
+              RaisedButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => QRScan()));
+                },
+                child: Text('QRGen'),
+              ),
+              RaisedButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => QRGen()));
+                },
+                child: Text('QRScan'),
+              ),
             ],
           ),
         ],

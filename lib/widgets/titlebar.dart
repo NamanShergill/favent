@@ -57,7 +57,10 @@ class _TitleBarState extends State<TitleBar> {
                   Text(
                     widget.title,
                     style: TextStyle(
-                        fontSize: _media.longestSide * 0.03,
+                        fontSize: _media.longestSide * 0.03>=25
+                            ?_media.longestSide * 0.03
+                            :25
+                        ,
                         fontFamily: 'Josefin',
                         fontWeight: FontWeight.bold,
                         color: Colors.white

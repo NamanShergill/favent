@@ -1,6 +1,10 @@
 import 'package:favent/Theme/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:favent/widgets/titlebar.dart';
+import 'package:barcode_scan/barcode_scan.dart';
+import 'dart:async';
+import 'package:flutter/services.dart';
 
 class QRGen extends StatefulWidget {
   @override
@@ -8,6 +12,8 @@ class QRGen extends StatefulWidget {
 }
 
 class _QRGenState extends State<QRGen> {
+  String barcode = "Nothing scanned yet";
+
   @override
   Widget build(BuildContext context) {
     final _media= MediaQuery.of(context).size;
@@ -35,7 +41,15 @@ class _QRGenState extends State<QRGen> {
                 SizedBox(height: 10,),
                 InfoCard('Contact Number', '?????????', context),
                 NavCard('Location (Tap to open in Maps)', '', context),
-                SizedBox(height: 100,),
+                SizedBox(height: 170,),
+                Container(
+                  height: 100,
+                  width: 300,
+                  color: Colors.grey,
+                  child: Align(
+                    alignment: Alignment.center,
+                      child: Text(barcode, style: TextStyle(color: Colors.white, fontFamily: 'Josefin', fontSize: 25),)),
+                ),
               ],
             ),
           ),
@@ -61,7 +75,44 @@ class _QRGenState extends State<QRGen> {
                         )
                     ),
                   ),
-                  colorCard('Scan QR', '', context, theme2.shade100),
+                  Container(
+                    constraints: BoxConstraints(minHeight: 90),
+                    height: 90,
+                    width: _media.width,
+                    decoration: BoxDecoration(
+                        color: theme2.shade100,
+                        boxShadow: [
+                          BoxShadow(
+                              color: theme2.shade100.withOpacity(0.4),
+                              blurRadius: 16,
+                              spreadRadius: 0.2,
+                              offset: Offset(0, 8)),
+                        ]),
+                    child: Material(
+                      color: theme2.shade100,
+                      child: InkWell(
+                        onTap: scan,
+                        child: Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                'Scan QR',
+                                style: TextStyle(
+                                    fontSize: 25,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'Josefin'
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -70,50 +121,25 @@ class _QRGenState extends State<QRGen> {
       ),
     );
   }
-}
 
-Widget colorCard(
-    String text, String text2, BuildContext context, Color color) {
-  final _media = MediaQuery.of(context).size;
-  return Container(
-    constraints: BoxConstraints(minHeight: 90),
-    height: 90,
-    width: _media.width,
-    decoration: BoxDecoration(
-        color: color,
-        boxShadow: [
-          BoxShadow(
-              color: color.withOpacity(0.4),
-              blurRadius: 16,
-              spreadRadius: 0.2,
-              offset: Offset(0, 8)),
-        ]),
-    child: Material(
-      color: color,
-      child: InkWell(
-        onTap: (){
-        },
-        child: Padding(
-          padding: EdgeInsets.all(20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                text,
-                style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Josefin'
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ),
-  );
+  Future scan() async {
+    try {
+      String barcode = await BarcodeScanner.scan();
+      setState(() => this.barcode = barcode);
+    } on PlatformException catch (e) {
+      if (e.code == BarcodeScanner.CameraAccessDenied) {
+        setState(() {
+          this.barcode = 'The user did not grant the camera permission!';
+        });
+      } else {
+        setState(() => this.barcode = 'Unknown error: $e');
+      }
+    } on FormatException{
+      setState(() => this.barcode = 'null (User returned using the "back"-button before scanning anything. Result)');
+    } catch (e) {
+      setState(() => this.barcode = 'Unknown error: $e');
+    }
+  }
 }
 
 Widget InfoCard(
@@ -226,3 +252,4 @@ Widget NavCard(
     ),
   );
 }
+

@@ -1,6 +1,8 @@
 import 'package:favent/Theme/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:favent/widgets/titlebar.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class QRScan extends StatefulWidget {
   @override
@@ -35,7 +37,7 @@ class _QRScanState extends State<QRScan> {
                 SizedBox(height: 10,),
                 InfoCard('Contact Number', '?????????', context),
                 NavCard('Location (Tap to open in Maps)', '', context),
-                SizedBox(height: 100,),
+                SizedBox(height: 170,),
               ],
             ),
           ),
@@ -61,7 +63,46 @@ class _QRScanState extends State<QRScan> {
                         )
                     ),
                   ),
-                  colorCard('Show QR', '', context, theme2.shade100),
+                  Container(
+                    constraints: BoxConstraints(minHeight: 90),
+                    height: 90,
+                    width: _media.width,
+                    decoration: BoxDecoration(
+                        color: theme2.shade100,
+                        boxShadow: [
+                          BoxShadow(
+                              color: theme2.shade100.withOpacity(0.4),
+                              blurRadius: 16,
+                              spreadRadius: 0.2,
+                              offset: Offset(0, 8)),
+                        ]),
+                    child: Material(
+                      color: theme2.shade100,
+                      child: InkWell(
+                        onTap: (){
+                         _qrdialog(context);
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                'Show QR',
+                                style: TextStyle(
+                                    fontSize: 25,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'Josefin'
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -70,50 +111,6 @@ class _QRScanState extends State<QRScan> {
       ),
     );
   }
-}
-
-Widget colorCard(
-    String text, String text2, BuildContext context, Color color) {
-  final _media = MediaQuery.of(context).size;
-  return Container(
-    constraints: BoxConstraints(minHeight: 90),
-    height: 90,
-    width: _media.width,
-    decoration: BoxDecoration(
-        color: color,
-        boxShadow: [
-          BoxShadow(
-              color: color.withOpacity(0.4),
-              blurRadius: 16,
-              spreadRadius: 0.2,
-              offset: Offset(0, 8)),
-        ]),
-    child: Material(
-      color: color,
-      child: InkWell(
-        onTap: (){
-        },
-        child: Padding(
-          padding: EdgeInsets.all(20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                text,
-                style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Josefin'
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ),
-  );
 }
 
 Widget InfoCard(
@@ -224,5 +221,32 @@ Widget NavCard(
         ),
       ),
     ),
+  );
+}
+
+void _qrdialog(BuildContext context){
+  showDialog(
+      context: context,
+    builder: (BuildContext context){
+      String qrdata= 'hellofromtheotherside';
+      final _media = MediaQuery.of(context).size;
+      return AlertDialog(
+        backgroundColor: Colors.white,
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15)
+        ),
+        content: Container(
+          height: _media.width*0.8,
+          width: _media.width*0.8,
+          child: Center(
+            child: QrImage(
+              data: qrdata,
+              backgroundColor: Colors.white,
+            ),
+          ),
+        ),
+      );
+    }
   );
 }

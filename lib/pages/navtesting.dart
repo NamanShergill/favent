@@ -29,13 +29,13 @@ class _navtestingState extends State<navtesting> {
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => QRScan()));
                 },
-                child: Text('QRScan'),
+                child: Text('QRGen'),
               ),
               RaisedButton(
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => QRGen()));
                 },
-                child: Text('QRGen'),
+                child: Text('QRScan'),
               ),
             ],
           ),

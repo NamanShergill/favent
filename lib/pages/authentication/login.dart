@@ -35,7 +35,8 @@ class _loginpageState extends State<loginpage> {
                         style: TextStyle(
                             fontSize: 30,
                             color: Colors.grey
-                        ),)
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -54,8 +55,8 @@ class _loginpageState extends State<loginpage> {
                     lHeight = lHeight == 0
                         ? lHeight= _media.height * 0.8
                         : lHeight = 0
-                    ;
-                  });
+                    ;}
+                  );
                 },
                 child: AnimatedContainer(
                   constraints: BoxConstraints(minHeight: 100),

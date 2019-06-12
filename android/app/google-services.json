@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1072216579581",
+    "firebase_url": "https://favent-ad63e.firebaseio.com",
+    "project_id": "favent-ad63e",
+    "storage_bucket": "favent-ad63e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072216579581:android:44c25a49d7e5c6e7",
+        "android_client_info": {
+          "package_name": "com.felix.favent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1072216579581-9pflgerebfed22s7trifnb9ddppk9t7q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.felix.favent",
+            "certificate_hash": "d238c7610577521fcd75fac983ecf1235874fc32"
+          }
+        },
+        {
+          "client_id": "1072216579581-nnk9il613ut55n7n8pesp0joshp3ca71.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC042rue4sJJAsPjQdQFGymG3KSq9yRiTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1072216579581-nnk9il613ut55n7n8pesp0joshp3ca71.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

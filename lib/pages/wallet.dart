@@ -72,7 +72,7 @@ class Wallet extends StatelessWidget {
                             children: <Widget>[
                               Row(
                                 children: <Widget>[
-                                  Icon(Icons.monetization_on, color: Colors.grey,),
+                                  Icon(Icons.monetization_on, color: Colors.grey, size: 20,),
                                   SizedBox(
                                     width: 10,
                                   ),
@@ -82,8 +82,8 @@ class Wallet extends StatelessWidget {
                                       Text(
                                         "Favor Points",
                                         style: TextStyle(
+                                          fontSize: 17,
                                           color: Colors.grey,
-                                          fontSize: 18,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: DFFont,
                                         ),
@@ -91,14 +91,14 @@ class Wallet extends StatelessWidget {
                                       SizedBox(
                                         height: 5,
                                       ),
-                                      Text(
-                                        '2000',
-                                        style: Theme.of(context).textTheme.headline.copyWith(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: DFFont,
-                                        ),
-                                      ),
+                                      Text('2000',
+                                          style: Theme.of(context).textTheme.headline.copyWith(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                            letterSpacing: 0.4,
+                                            fontFamily: DFFont,
+                                            fontSize: 20,
+                                          ))
                                     ],
                                   ),
                                 ],
@@ -129,13 +129,19 @@ class Wallet extends StatelessWidget {
                       children: <Widget>[
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10),
-                          child: Text(
-                            "Wallet",
-                            style: TextStyle(
-                                fontSize: 50,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: DFFont),
+                          child: Hero(
+                            tag: 'title1',
+                            child: Material(
+                              color: Colors.transparent,
+                              child: Text(
+                                "Wallet",
+                                style: TextStyle(
+                                    fontSize: 50,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: DFFont),
+                              ),
+                            ),
                           ),
                         ),
                       ],

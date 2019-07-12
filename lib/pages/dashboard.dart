@@ -81,7 +81,7 @@ class _DashboardState extends State<Dashboard> {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    Icon(Icons.account_circle, color: Colors.grey,),
+                                    Icon(Icons.account_circle, color: Colors.grey, size: 20,),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -92,7 +92,7 @@ class _DashboardState extends State<Dashboard> {
                                           "User",
                                           style: TextStyle(
                                             color: Colors.grey,
-                                            fontSize: 18,
+                                            fontSize: 17,
                                             fontWeight: FontWeight.bold,
                                             fontFamily: DFFont,
                                           ),
@@ -106,6 +106,7 @@ class _DashboardState extends State<Dashboard> {
                                             color: Colors.black,
                                             fontWeight: FontWeight.bold,
                                             fontFamily: DFFont,
+                                            fontSize: 20
                                           ),
                                         ),
                                       ],
@@ -115,7 +116,7 @@ class _DashboardState extends State<Dashboard> {
                                 SizedBox(height: 20),
                                 Row(
                                   children: <Widget>[
-                                    Icon(Icons.monetization_on, color: Colors.grey,),
+                                    Icon(Icons.monetization_on, color: Colors.grey, size: 20,),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -125,7 +126,7 @@ class _DashboardState extends State<Dashboard> {
                                         Text(
                                           "Favor Points",
                                           style: TextStyle(
-                                            fontSize: 18,
+                                            fontSize: 17,
                                             color: Colors.grey,
                                             fontWeight: FontWeight.bold,
                                             fontFamily: DFFont,
@@ -140,6 +141,7 @@ class _DashboardState extends State<Dashboard> {
                                               fontWeight: FontWeight.bold,
                                               letterSpacing: 0.4,
                                               fontFamily: DFFont,
+                                              fontSize: 20,
                                             ))
                                       ],
                                     ),
@@ -171,13 +173,19 @@ class _DashboardState extends State<Dashboard> {
                         children: <Widget>[
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10),
-                            child: Text(
-                              "Dashboard",
-                              style: TextStyle(
-                                  fontSize: 50,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: "Josefin"),
+                            child: Hero(
+                              tag: 'title1',
+                              child: Material(
+                                color: Colors.transparent,
+                                child: Text(
+                                  "Dashboard",
+                                  style: TextStyle(
+                                      fontSize: 50,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Josefin"),
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -294,16 +302,19 @@ class _DashboardState extends State<Dashboard> {
               ],
             ),
           ),
-          RaisedButton(
-            onPressed: (){
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => navtesting()
-                  )
-              );
-            },
-            child: Text('Navigation'),
+          Padding(
+            padding: EdgeInsets.all(40),
+            child: RaisedButton(
+              onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => navtesting()
+                    )
+                );
+              },
+              child: Text('Navigation'),
+            ),
           ),
         ],
       ),

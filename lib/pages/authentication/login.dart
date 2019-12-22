@@ -12,6 +12,7 @@ class _loginpageState extends State<loginpage> {
 
   double sHeight= 0;
   String button= 'Sign Up';
+  String button2= 'Sign Up';
   double lHeight;
 
   @override
@@ -40,13 +41,17 @@ class _loginpageState extends State<loginpage> {
                         ? sHeight= _media.height * 0.8
                         : sHeight = 0
                     ;
-                    button = button == 'Sign Up'
-                        ? button = 'Login'
-                        : button = 'Sign Up'
+                    button = button == 'Don\'t have an account?'
+                        ? button = 'Already have an account?'
+                        : button = 'Don\'t have an account?'
                     ;
                     lHeight = lHeight == 0
                         ? lHeight= _media.height * 0.8
                         : lHeight = 0
+                    ;
+                    button2 = button2 == 'Don\'t have an account?'
+                        ? button2 = 'Already have an account?'
+                        : button2 = 'Don\'t have an account?'
                     ;}
                   );
                 },
@@ -68,7 +73,7 @@ class _loginpageState extends State<loginpage> {
                         button,
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 60,
+                            fontSize: 25,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Josefin',
                             letterSpacing: 0.4

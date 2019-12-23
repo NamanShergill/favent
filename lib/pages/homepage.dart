@@ -5,6 +5,7 @@ import 'package:favent/pages/wallet.dart';
 import 'package:favent/pages/profile.dart';
 import 'package:favent/Theme/colors.dart';
 import 'package:favent/pages/notifications.dart';
+import 'package:favent/backend/device/location.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -56,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
     },
       children: <Widget>[
         Dashboard(),
-        Wallet(),
+        locationdis(),
         notifPage(),
         ProfilePage(),
       ],

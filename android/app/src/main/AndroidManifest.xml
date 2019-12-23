@@ -3,6 +3,7 @@
 
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
@@ -14,6 +15,10 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="Favent"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC042rue4sJJAsPjQdQFGymG3KSq9yRiTs"/>
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
